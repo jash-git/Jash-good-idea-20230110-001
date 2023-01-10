@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://www.suajin.com/detail/491 -->
+<html class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>C# TSC打印- 我的空間</title><link rel="Bookmark" href="https://www.suajin.com/favicon.ico"><link rel="Shortcut Icon" href="https://www.suajin.com/favicon.ico"><link rel="stylesheet" href="./C# TSC打印- 我的空間_files/bootstrap.min.css"><style>body,span>a,.item>span>span,.col-lg-3>h3{
+    font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, "WenQuanYi Micro Hei", Verdana, sans-serif;
+}
+
+a,.col-lg-3>h3 {
+    color: #333333;
+}
+a:hover {
+    text-decoration: none;
+}
+
+div span a,.glight {
+    color: #009688;
+}
+p>span>span {
+    font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, "WenQuanYi Micro Hei", Verdana, sans-serif;
+    font-style: oblique;
+}
+
+.pic {
+    margin-right: 15px;
+    height: 110px;
+    width: 165px;
+}
+
+.pic img{
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.5;
+}
+
+.index_arc{
+    height: 150px;
+    width: 100%;
+    padding: 15px;
+}
+.index_arc_item span {
+    padding-right: 15px;
+}
+
+.desc{
+    height: 48px;
+    line-height: 24px;
+    overflow: hidden;
+    margin-top: 8px;
+    color: #444;
+}
+
+.index_recd li {
+    line-height: 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    list-style: decimal-leading-zero inside;
+    font-style: oblique;
+    font-size: 14px;
+}
+
+.index_recd li a,.list-group>.list-group-item>span>a {
+    font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, "WenQuanYi Micro Hei", Verdana, sans-serif;
+    color: #009688;
+    max-width: 68%;
+    margin-right: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+    font-style: normal;
+}
+
+.tags>a,.glyphicon-link>a {
+    height: 26px;
+    line-height: 26px;
+    padding-right: 10px;
+}
+
+.glyphicon-fire,.glyphicon-comment{
+    color: #666;
+}
+
+.tags0 {
+    color: #C8F;
+    font-size: 14px
+}
+
+.tags1 {
+    color: #C86;
+    font-size: 24px
+}
+
+.tags2 {
+    color: #030;
+    font-size: 16px
+}
+
+.tags3 {
+    color: #00F
+}
+
+.tags4 {
+    color: #555;
+    font-size: 19px
+}
+
+.tags5 {
+    color: #C00;
+    font-size: 9px
+}
+
+.tags6 {
+    color: #F06;
+    font-size: 20px
+}
+
+.tags7 {
+    color: #030;
+    font-weight: bold;
+    font-size: 18px
+}
+
+.tags8 {
+    color: #606;
+    font-weight: bold
+}
+
+.tags9 {
+    color: #C0C;
+    font-weight: bold;
+    font-size: 22px
+}</style><link rel="stylesheet" href="./C# TSC打印- 我的空間_files/shCoreDefault.pack.css"><style>.txt > p {
+    text-indent: 2em;
+}
+
+img {
+    text-indent: 0;
+    max-width: 100%;
+    display: block;
+}
+
+.defaultimg {
+    display: inline;
+}
+
+/*隐藏竖向滚动条*/
+.syntaxhighlighter {
+    overflow-y: hidden !important;
+}
+
+.list-paddingleft-2 {
+    padding-left: 4em;
+}
+
+.keybq>.label,#cancel>span {
+    margin-right: 10px;
+}
+
+.commentList .item {
+    list-style: none outside none;
+    margin: 1.6rem 0 0;
+    padding-bottom: 50px;
+}
+
+.commentList .avatar {
+    border: 1px solid transparent;
+    float: left
+}
+
+.comment-main {
+    position: relative;
+    margin-left: 64px;
+    border: 1px solid #dedede;
+    border-radius: 2px
+}
+
+.comment-main:before, .comment-main:after {
+    position: absolute;
+    top: 11px;
+    left: -16px;
+    right: 100%;
+    width: 0;
+    height: 0;
+    display: block;
+    content: " ";
+    border-color: transparent;
+    border-style: solid solid outset;
+    pointer-events: none
+}
+
+.comment-main:before {
+    border-right-color: #dedede;
+    border-width: 8px
+}
+
+.comment-main:after {
+    border-width: 7px;
+    border-right-color: #f8f8f8;
+    margin-top: 1px;
+    margin-left: 2px
+}
+
+.comment-header {
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee
+}
+
+.comment-title {
+    margin: 0 0 8px 0;
+    font-size: 1.6rem;
+    line-height: 1.2
+}
+
+.comment-meta {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.2
+}
+
+.comment-meta a {
+    color: #999
+}
+
+.comment-author {
+    font-weight: 700;
+    color: #999
+}
+
+.comment-body {
+    padding: 15px;
+    overflow: hidden
+}
+
+.comment-body > :last-child {
+    margin-bottom: 0
+}
+
+.commentList .comment-flip .avatar {
+    float: right
+}
+
+.comment-flip .comment-main {
+    margin-left: 0;
+    margin-right: 64px
+}
+
+.comment-flip .comment-main:before {
+    border-left-color: #dedede;
+    border-right-color: transparent
+}
+
+.comment-flip .comment-main:before, .comment-flip .comment-main:after {
+    left: 100%;
+    position: absolute;
+    right: -16px
+}
+
+.comment-flip .comment-main:after {
+    border-left-color: #f8f8f8;
+    border-right-color: transparent;
+    margin-left: auto;
+    margin-right: 2px
+}
+
+.cl, .clearfix {
+    zoom: 1;
+}
+
+.commentList>li {
+    margin: 0;
+    padding: 0;
+}
+.support-type,.gprolist {
+    list-style: none;
+}
+.support-type li,.gprolist li {
+    display:inline-block;
+    margin: 0 10px 0 10px;
+}
+.gprolist li {
+    width: 220px;
+}
+.support-type li span {
+    color: rgba(0, 0, 0, 0);
+    vertical-align: middle;
+}
+.linkcss3 {
+    color: #f50;
+}
+.browser-ie, .browser-firefox, .browser-chrome, .browser-safari, .browser-opera {
+    display: block;
+    overflow: hidden;
+    height: 32px;
+    padding-left: 40px;
+    background-image: url("/images/browser.png");
+    background-repeat: no-repeat;
+    line-height: 32px;
+}
+
+.browser-firefox {
+    background-position: 0 -33px;
+}
+
+.browser-safari {
+    background-position: 0 -99px;
+}
+
+.browser-chrome {
+    background-position: 0 -66px;
+}
+
+.browser-opera {
+    background-position: 0 -132px;
+}
+
+.support {
+    text-align: center;
+    color: black;
+    background-color: #00FF00;
+}
+
+.unsupport {
+    text-align: center;
+    color: black;
+    background-color: #FF0000;
+}
+
+.partsupport {
+    text-align: center;
+    color: black;
+    background-color: #115511;
+}
+
+.experimentsupport {
+    text-align: center;
+    color: black;
+    background-color: #f50;
+}
+
+.txt>table>tbody>tr>td {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.syntaxhighlighter td.code .container::before,.syntaxhighlighter td.code .container::after {
+    display: none;
+}
+
+.hand {
+    cursor:pointer;
+}
+
+ins {
+    text-decoration: none;
+}
+ins:after{position:relative;top:-6px;margin-left:3px;padding:0 3px;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.3);color:#fff;content:attr(title);font-size:10px;text-transform:lowercase;}
+ins[title^="css"]:after {
+    background-color: #f60;
+}</style><script src="./C# TSC打印- 我的空間_files/push.js.下載"></script><script src="./C# TSC打印- 我的空間_files/jquery-3.4.1.min.js.下載"></script><script src="./C# TSC打印- 我的空間_files/bootstrap.min.js.下載"></script><script src="./C# TSC打印- 我的空間_files/11.0.1.js.下載" id="sozz"></script><script charset="utf-8" src="./C# TSC打印- 我的空間_files/ab77b6ea7f3fbf79.js.下載"></script><style type="text/css">.w-e-toolbar,.w-e-text-container,.w-e-menu-panel {  padding: 0;  margin: 0;  box-sizing: border-box;}.w-e-toolbar *,.w-e-text-container *,.w-e-menu-panel * {  padding: 0;  margin: 0;  box-sizing: border-box;}.w-e-clear-fix:after {  content: "";  display: table;  clear: both;}.w-e-toolbar .w-e-droplist {  position: absolute;  left: 0;  top: 0;  background-color: #fff;  border: 1px solid #f1f1f1;  border-right-color: #ccc;  border-bottom-color: #ccc;}.w-e-toolbar .w-e-droplist .w-e-dp-title {  text-align: center;  color: #999;  line-height: 2;  border-bottom: 1px solid #f1f1f1;  font-size: 13px;}.w-e-toolbar .w-e-droplist ul.w-e-list {  list-style: none;  line-height: 1;}.w-e-toolbar .w-e-droplist ul.w-e-list li.w-e-item {  color: #333;  padding: 5px 0;}.w-e-toolbar .w-e-droplist ul.w-e-list li.w-e-item:hover {  background-color: #f1f1f1;}.w-e-toolbar .w-e-droplist ul.w-e-block {  list-style: none;  text-align: left;  padding: 5px;}.w-e-toolbar .w-e-droplist ul.w-e-block li.w-e-item {  display: inline-block;  *display: inline;  *zoom: 1;  padding: 3px 5px;}.w-e-toolbar .w-e-droplist ul.w-e-block li.w-e-item:hover {  background-color: #f1f1f1;}@font-face {  font-family: 'w-e-icon';  src: url(data:application/x-font-woff;charset=utf-8;base64,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) format('truetype');  font-weight: normal;  font-style: normal;}[class^="w-e-icon-"],[class*=" w-e-icon-"] {  /* use !important to prevent issues with browser extensions that change fonts */  font-family: 'w-e-icon' !important;  speak: none;  font-style: normal;  font-weight: normal;  font-variant: normal;  text-transform: none;  line-height: 1;  /* Better Font Rendering =========== */  -webkit-font-smoothing: antialiased;  -moz-osx-font-smoothing: grayscale;}.w-e-icon-close:before {  content: "\f00d";}.w-e-icon-upload2:before {  content: "\e9c6";}.w-e-icon-trash-o:before {  content: "\f014";}.w-e-icon-header:before {  content: "\f1dc";}.w-e-icon-pencil2:before {  content: "\e906";}.w-e-icon-paint-brush:before {  content: "\f1fc";}.w-e-icon-image:before {  content: "\e90d";}.w-e-icon-play:before {  content: "\e912";}.w-e-icon-location:before {  content: "\e947";}.w-e-icon-undo:before {  content: "\e965";}.w-e-icon-redo:before {  content: "\e966";}.w-e-icon-quotes-left:before {  content: "\e977";}.w-e-icon-list-numbered:before {  content: "\e9b9";}.w-e-icon-list2:before {  content: "\e9bb";}.w-e-icon-link:before {  content: "\e9cb";}.w-e-icon-happy:before {  content: "\e9df";}.w-e-icon-bold:before {  content: "\ea62";}.w-e-icon-underline:before {  content: "\ea63";}.w-e-icon-italic:before {  content: "\ea64";}.w-e-icon-strikethrough:before {  content: "\ea65";}.w-e-icon-table2:before {  content: "\ea71";}.w-e-icon-paragraph-left:before {  content: "\ea77";}.w-e-icon-paragraph-center:before {  content: "\ea78";}.w-e-icon-paragraph-right:before {  content: "\ea79";}.w-e-icon-terminal:before {  content: "\f120";}.w-e-icon-page-break:before {  content: "\ea68";}.w-e-icon-cancel-circle:before {  content: "\ea0d";}.w-e-icon-font:before {  content: "\ea5c";}.w-e-icon-text-heigh:before {  content: "\ea5f";}.w-e-toolbar {  display: -webkit-box;  display: -ms-flexbox;  display: flex;  padding: 0 5px;  /* flex-wrap: wrap; */  /* 单个菜单 */}.w-e-toolbar .w-e-menu {  position: relative;  text-align: center;  padding: 5px 10px;  cursor: pointer;}.w-e-toolbar .w-e-menu i {  color: #999;}.w-e-toolbar .w-e-menu:hover i {  color: #333;}.w-e-toolbar .w-e-active i {  color: #1e88e5;}.w-e-toolbar .w-e-active:hover i {  color: #1e88e5;}.w-e-text-container .w-e-panel-container {  position: absolute;  top: 0;  left: 50%;  border: 1px solid #ccc;  border-top: 0;  box-shadow: 1px 1px 2px #ccc;  color: #333;  background-color: #fff;  /* 为 emotion panel 定制的样式 */  /* 上传图片的 panel 定制样式 */}.w-e-text-container .w-e-panel-container .w-e-panel-close {  position: absolute;  right: 0;  top: 0;  padding: 5px;  margin: 2px 5px 0 0;  cursor: pointer;  color: #999;}.w-e-text-container .w-e-panel-container .w-e-panel-close:hover {  color: #333;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-title {  list-style: none;  display: -webkit-box;  display: -ms-flexbox;  display: flex;  font-size: 14px;  margin: 2px 10px 0 10px;  border-bottom: 1px solid #f1f1f1;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-title .w-e-item {  padding: 3px 5px;  color: #999;  cursor: pointer;  margin: 0 3px;  position: relative;  top: 1px;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-title .w-e-active {  color: #333;  border-bottom: 1px solid #333;  cursor: default;  font-weight: 700;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content {  padding: 10px 15px 10px 15px;  font-size: 16px;  /* 输入框的样式 */  /* 按钮的样式 */}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content input:focus,.w-e-text-container .w-e-panel-container .w-e-panel-tab-content textarea:focus,.w-e-text-container .w-e-panel-container .w-e-panel-tab-content button:focus {  outline: none;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content textarea {  width: 100%;  border: 1px solid #ccc;  padding: 5px;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content textarea:focus {  border-color: #1e88e5;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content input[type=text] {  border: none;  border-bottom: 1px solid #ccc;  font-size: 14px;  height: 20px;  color: #333;  text-align: left;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content input[type=text].small {  width: 30px;  text-align: center;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content input[type=text].block {  display: block;  width: 100%;  margin: 10px 0;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content input[type=text]:focus {  border-bottom: 2px solid #1e88e5;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button {  font-size: 14px;  color: #1e88e5;  border: none;  padding: 5px 10px;  background-color: #fff;  cursor: pointer;  border-radius: 3px;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button.left {  float: left;  margin-right: 10px;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button.right {  float: right;  margin-left: 10px;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button.gray {  color: #999;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button.red {  color: #c24f4a;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button:hover {  background-color: #f1f1f1;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container:after {  content: "";  display: table;  clear: both;}.w-e-text-container .w-e-panel-container .w-e-emoticon-container .w-e-item {  cursor: pointer;  font-size: 18px;  padding: 0 3px;  display: inline-block;  *display: inline;  *zoom: 1;}.w-e-text-container .w-e-panel-container .w-e-up-img-container {  text-align: center;}.w-e-text-container .w-e-panel-container .w-e-up-img-container .w-e-up-btn {  display: inline-block;  *display: inline;  *zoom: 1;  color: #999;  cursor: pointer;  font-size: 60px;  line-height: 1;}.w-e-text-container .w-e-panel-container .w-e-up-img-container .w-e-up-btn:hover {  color: #333;}.w-e-text-container {  position: relative;}.w-e-text-container .w-e-progress {  position: absolute;  background-color: #1e88e5;  bottom: 0;  left: 0;  height: 1px;}.w-e-text {  padding: 0 10px;  overflow-y: scroll;}.w-e-text p,.w-e-text h1,.w-e-text h2,.w-e-text h3,.w-e-text h4,.w-e-text h5,.w-e-text table,.w-e-text pre {  margin: 10px 0;  line-height: 1.5;}.w-e-text ul,.w-e-text ol {  margin: 10px 0 10px 20px;}.w-e-text blockquote {  display: block;  border-left: 8px solid #d0e5f2;  padding: 5px 10px;  margin: 10px 0;  line-height: 1.4;  font-size: 100%;  background-color: #f1f1f1;}.w-e-text code {  display: inline-block;  *display: inline;  *zoom: 1;  background-color: #f1f1f1;  border-radius: 3px;  padding: 3px 5px;  margin: 0 3px;}.w-e-text pre code {  display: block;}.w-e-text table {  border-top: 1px solid #ccc;  border-left: 1px solid #ccc;}.w-e-text table td,.w-e-text table th {  border-bottom: 1px solid #ccc;  border-right: 1px solid #ccc;  padding: 3px 5px;}.w-e-text table th {  border-bottom: 2px solid #ccc;  text-align: center;}.w-e-text:focus {  outline: none;}.w-e-text img {  cursor: pointer;}.w-e-text img:hover {  box-shadow: 0 0 5px #333;}</style><link type="text/css" rel="stylesheet" charset="UTF-8" href="./C# TSC打印- 我的空間_files/translateelement.css"></head><body style="padding-top:60px;background-color:#cce8cf;"><header class="navbar navbar-default navbar-fixed-top" id="head" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="https://www.suajin.com/"><img src="./C# TSC打印- 我的空間_files/logo.png" style="height:30px;" alt="我的空間"></a></div><div><ul class="nav navbar-nav"><li><a href="https://www.suajin.com/" data-hover="首页"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">首頁</font></font></a></li><li><a href="https://www.suajin.com/list/" data-hover="学无止尽"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">學無止盡</font></font></a></li><li><a href="https://www.suajin.com/tool/" data-hover="常用工具"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">常用工具</font></font></a></li><li><a href="https://www.suajin.com/board/" data-hover="留言板"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">留言板</font></font></a></li><li><div class="navbar-form navbar-left"><div class="form-group"><input class="form-control" id="txtFind" type="text" placeholder="搜索內容" maxlength="50" style="min-width:500px;"></div></div></li><li><button class="btn btn-primary navbar-btn radius" onclick="find();"><span class="glyphicon glyphicon-search"></span></button></li><li><span>&nbsp;</span></li><li><img class="btn btn-default navbar-btn radius" onclick="baidu();" src="./C# TSC打印- 我的空間_files/search.png" style="height:35px;"></li></ul></div></div></header><nav class="breadcrumb"><div class="container"><span class="glyphicon glyphicon-home"></span><a class="c-primary" href="https://www.suajin.com/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">首頁</font></font></a><span class="c-gray en"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span><span class="c-gray"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文章</font></font></span><span class="c-gray en"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt;</font></font></span><span class="c-gray"><a href="https://www.suajin.com/list/5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">編程</font></font></a></span></div></nav><section class="container" style="margin-bottom:50px;"><div class="row"><div class="col-lg-9 row"><div class="col-lg-12"><h3 class="text-center"><a href="https://www.suajin.com/detail/491"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">C# TSC打印</font></font></a></h3><p class="text-center" style="padding: 5px 0;margin-right: 30px;color: #999;"><span style="margin-right:20px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">發佈時間：2018-06-26</font></font></span><span style="margin-right:20px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">編輯：佚名</font></font></span><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">閱讀（2034）</font></font></span></p><div style="line-height:2em;"><span class="txt" id="dc"><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">函數說明</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1. openp*t(a)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">說明: 指定計算機端的輸出端口</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">參數:</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">a: 單機打印時，請指定打印機驅動程序名稱，例如: TSC CLEVER TTP-243</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp; 若連接打印機服務器，請指定服務器路徑及共享打印機名稱，例如: //SERVER/TTP243</font></font></p><p>&nbsp;</p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2. closep*t()</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">說明: 關閉指定的計算機端輸出端口</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">參數: 無</font></font></p><p>&nbsp;</p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3. setup(a,b,c,d,e,f,g)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">說明: 設定卷標的寬度、高度、打印速度、打印濃度、感應器類別、gap/black mark 垂直間距、gap/black mark 偏移距離)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">參數:</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">a: 字符串型別，設定卷標寬度，單位mm</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">b: 字符串型別，設定卷標高度，單位mm</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">c: 字符串型別，設定打印速度，(打印速度隨機型不同而有不同的選項)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.0: 每秒1.0吋打印速度</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.5: 每秒1.5吋打印速度</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.0: 每秒2.0吋打印速度</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.0: 每秒3.0吋打印速度</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.0: 每秒4.0吋打印速度</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.0: 每秒5.0吋打印速度</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6.0: 每秒6.0吋打印速度</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">d: 字符串型別，設定打印濃度，0~15，數字愈大打印結果愈黑</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">e: 字符串型別，設定使用感應器類別</font></font></p><p>&nbsp;&nbsp;&nbsp;&nbsp;0 表示使用垂直间距传感器(gap sens*)</p><p>&nbsp;&nbsp;&nbsp;&nbsp;1 表示使用黑标传感器(black mark sens*)</p><p>f: 字符串型别，设定gap/black mark 垂直间距高度，单位: mm</p><p>g: 字符串型别，设定gap/black mark 偏移距离，单位: mm，此参数若使用一般卷标时均设为0</p><p>&nbsp;</p><p>4.clearbuffer()</p><p>说明: 清除</p><p>参数: 无</p><p><br></p><p>5.barcode(a,b,c,d,e,f,g,h,I)</p><p>说明: 使用条形码机内建条形码打印</p><p>参数:</p><p>a: 字符串型别，条形码X方向起始点，以点(point)表示。</p><p>(200 DPI，1点=1/8 mm, 300 DPI，1点=1/12 mm)</p><p>b: 字符串型别，条形码Y方向起始点，以点(point)表示。</p><p>(200 DPI，1点=1/8 mm, 300 DPI，1点=1/12 mm)</p><p>c: 字符串型别，</p><p>128 Code 128, switching code subset A, B, C</p><p>automatically</p><p>128M Code 128, switching code subset A, B, C</p><p>manually.</p><p>EAN128 Code 128, switching code subset A, B, C</p><p>automatically</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interleaved 2 of 5</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 25C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interleaved 2 of 5 with check digits</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 39&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Code 39</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 39C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Code 39 with check digits</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 93&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Code 93</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EAN13 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EAN 13</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EAN13+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EAN 13 with 2 digits add-on</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EAN13+5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EAN 13 with 5 digits add-on</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EAN8&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EAN 8</p><p>&nbsp;&nbsp;&nbsp;&nbsp; EAN8+2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EAN 8 with 2 digits add-on</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EAN8+5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EAN 8 with 5 digits add-on</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CODA&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Codabar</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; POST&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Postnet</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPCA&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPC-A</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPCA+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPC-A with 2 digits add-on</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPCA+5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPC-A with 5 digits add-on</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPCE&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPC-E</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPCE+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPC-E with 2 digits add-on</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPCE+5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UPC-E with 5 digits add-on</p><p>&nbsp;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d: 字符串型别，设定条形码高度，高度以点来表示</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e: 字符串型别，设定是否打印条形码码文</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0: 不打印码文</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1: 打印码文</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f: 字符串型别，设定条形码旋转角度</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0: 旋转0度</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 90: 旋转90度</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 180: 旋转180度</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 270: 旋转270度</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g: 字符串型别，设定条形码窄bar 比例因子，请参考TSPL使用手册</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h: 字符串型别，设定条形码窄bar 比例因子，请参考TSPL使用手册</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I: 字符串型别，条形码内容</p><p>&nbsp;</p><p>6.printerfont(a,b,c,d,e,f,g)</p><p>说明: 使用条形码机内建文字打印</p><p>参数:</p><p>a: 字符串型别，文字X方向起始点，以点(point)表示。</p><p>(200 DPI，1点=1/8 mm, 300 DPI，1点=1/12 mm)</p><p>b: 字符串型别，文字Y方向起始点，以点(point)表示。</p><p>(200 DPI，1点=1/8 mm, 300 DPI，1点=1/12 mm)</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c: 字符串型别，内建字型名称，共12种。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1: 8*/12 dots</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2: 12*20 dots</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3: 16*24 dots</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4: 24*32 dots</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5: 32*48 dots</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TST24.BF2: 繁体中文24*24</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TST16.BF2: 繁体中文16*16</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TTT24.BF2: 繁体中文24*24 (电信码)</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TSS24.BF2: 简体中文24*24</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TSS16.BF2: 简体中文16*16</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; K: 韩文 24*24</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L: 韩文 16*16</p><p>d: 字符串型别，设定文字旋转角度</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0: 旋转0度</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 90: 旋转90度</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 180: 旋转180度</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 270: 旋转270度</p><p>e: 字符串型别，设定文字X方向放大倍率，1~8</p><p>f: 字符串型别，设定文字X方向放大倍率，1~8</p><p>g: 字符串型别，打印文字内容</p><p>&nbsp;</p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7.sendcommand(command)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">說明: 送內建指令到條形碼打印機</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">參數: 詳細指令請參考TSPL</font></font></p><p>&nbsp;</p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8.printlabel(a,b)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">說明: 打印卷標內容</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">參數:</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a: 字符串型別，設定打印卷標式數(set)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b: 字符串型別，設定打印卷標份數(copy)</font></font></p><p>&nbsp;</p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9.downloadpcx(a,b)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">說明:下載單色PCX 格式圖文件至打印機</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">參數:</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a: 字符串型別，文件名(可包含路徑)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b: 字符串型別，下載至打印機內存內之文件名(請使用大寫檔名)</font></font></p><p>&nbsp;</p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10. f*mfeed()</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">說明: 跳頁，該函式需在setup後使用</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">參數: 無</font></font></p><p>&nbsp;</p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">11. nobackfeed()</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">說明: 設定紙張不回吐</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">參數: 無</font></font></p><p>&nbsp;</p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12. windowsfont(a,b,c,d,e,f,g,h)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">說明: 使用Windows TTF字型打印文字</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">參數:</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">a: 整數型別，文字X方向起始點，以點(point)表示。</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">b: 整數型別，文字Y方向起始點，以點(point)表示。</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">c: 整數型別，字體高度，以點(point)表示。</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">d: 整數型別，旋轉角度，逆時鐘方向旋轉</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0 -&gt; 0 degree</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">90-&gt; 90 degree</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">180-&gt; 180 degree</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">270-&gt; 270 degree</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">e: 整數型別，字體外形</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0-&gt; 標準(N*mal)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1-&gt; 斜體(Italic)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2-&gt; 粗體(Bold)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3-&gt; 粗斜體(Bold and Italic)</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">f: 整數型別, 底線</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0-&gt; 無底線</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1-&gt; 加底線</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">g: 字符串型別，字體名稱。</font><font style="vertical-align: inherit;">如: Arial, Times new Roman, 細名體, 標楷體</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">h: 字符串型別，打印文字內容。</font></font></p><p>&nbsp;</p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13. about()</font></font></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">說明: 顯示DLL 版本號碼</font></font></p><p><br></p><p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TSC條碼打印機C#例程(tsclib.dll調用)</font></font></p><table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter  c#"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></div><div class="line number2 index1 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2</font></font></div><div class="line number3 index2 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></div><div class="line number4 index3 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></div><div class="line number5 index4 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></div><div class="line number6 index5 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></div><div class="line number7 index6 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></div><div class="line number8 index7 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></div><div class="line number9 index8 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9</font></font></div><div class="line number10 index9 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></div><div class="line number11 index10 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">11</font></font></div><div class="line number12 index11 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12</font></font></div><div class="line number13 index12 alt2" style="height: 42px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></div><div class="line number14 index13 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">14</font></font></div><div class="line number15 index14 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">15</font></font></div><div class="line number16 index15 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">16</font></font></div><div class="line number17 index16 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">17</font></font></div><div class="line number18 index17 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">18</font></font></div><div class="line number19 index18 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">19</font></font></div><div class="line number20 index19 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">20</font></font></div><div class="line number21 index20 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">21</font></font></div><div class="line number22 index21 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">22</font></font></div><div class="line number23 index22 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">23</font></font></div><div class="line number24 index23 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">24</font></font></div><div class="line number25 index24 alt2" style="height: 42px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">25</font></font></div><div class="line number26 index25 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">26</font></font></div><div class="line number27 index26 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">27</font></font></div><div class="line number28 index27 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">28</font></font></div><div class="line number29 index28 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">29</font></font></div><div class="line number30 index29 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">30</font></font></div><div class="line number31 index30 alt2" style="height: 42px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">31</font></font></div><div class="line number32 index31 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">32</font></font></div><div class="line number33 index32 alt2" style="height: 42px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">33</font></font></div><div class="line number34 index33 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">34</font></font></div><div class="line number35 index34 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">35</font></font></div><div class="line number36 index35 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">36</font></font></div><div class="line number37 index36 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">37</font></font></div><div class="line number38 index37 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">38</font></font></div><div class="line number39 index38 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">39</font></font></div><div class="line number40 index39 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">40</font></font></div><div class="line number41 index40 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">41</font></font></div><div class="line number42 index41 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">42</font></font></div><div class="line number43 index42 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">43</font></font></div><div class="line number44 index43 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">44</font></font></div><div class="line number45 index44 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">45</font></font></div><div class="line number46 index45 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">46</font></font></div><div class="line number47 index46 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">47</font></font></div><div class="line number48 index47 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">48</font></font></div><div class="line number49 index48 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">49</font></font></div><div class="line number50 index49 alt1" style="height: 42px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">50</font></font></div><div class="line number51 index50 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">51</font></font></div><div class="line number52 index51 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">52</font></font></div><div class="line number53 index52 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">53</font></font></div><div class="line number54 index53 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">54</font></font></div><div class="line number55 index54 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">55</font></font></div><div class="line number56 index55 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">56</font></font></div><div class="line number57 index56 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">57</font></font></div><div class="line number58 index57 alt1" style="height: 42px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">58</font></font></div><div class="line number59 index58 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">59</font></font></div><div class="line number60 index59 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">60</font></font></div><div class="line number61 index60 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">61</font></font></div><div class="line number62 index61 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">62</font></font></div><div class="line number63 index62 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">63</font></font></div><div class="line number64 index63 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">64</font></font></div><div class="line number65 index64 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">65</font></font></div><div class="line number66 index65 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">66</font></font></div><div class="line number67 index66 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">67</font></font></div><div class="line number68 index67 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">68</font></font></div><div class="line number69 index68 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">69</font></font></div><div class="line number70 index69 alt1" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">70</font></font></div><div class="line number71 index70 alt2" style="height: 21px !important; !important;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">71</font></font></div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="c# comments">//----&nbsp;&nbsp;program.cs</code></div><div class="line number2 index1 alt1"><code class="c# keyword">using</code>&nbsp;<code class="c# plain">System;</code></div><div class="line number3 index2 alt2"><code class="c# keyword">using</code>&nbsp;<code class="c# plain">System.Collections.Generic;</code></div><div class="line number4 index3 alt1"><code class="c# keyword">using</code>&nbsp;<code class="c# plain">System.Windows.Forms;</code></div><div class="line number5 index4 alt2"><code class="c# keyword">using</code>&nbsp;<code class="c# plain">System.Runtime.InteropServices;</code></div><div class="line number6 index5 alt1"><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">class</code>&nbsp;<code class="c# plain">TSCLIB_DLL</code></div><div class="line number7 index6 alt2"><code class="c# plain">{</code></div><div class="line number8 index7 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"about"</code><code class="c# plain">)]</code></div><div class="line number9 index8 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">about();</code></div><div class="line number10 index9 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"openport"</code><code class="c# plain">)]</code></div><div class="line number11 index10 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">openport(</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">printername);</code></div><div class="line number12 index11 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"barcode"</code><code class="c# plain">)]</code></div><div class="line number13 index12 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">barcode(</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">x,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">y,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">type,</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">height,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">readable,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">rotation,</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">narrow,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">wide,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">code);</code></div><div class="line number14 index13 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"clearbuffer"</code><code class="c# plain">)]</code></div><div class="line number15 index14 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">clearbuffer();</code></div><div class="line number16 index15 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"closeport"</code><code class="c# plain">)]</code></div><div class="line number17 index16 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">closeport();</code></div><div class="line number18 index17 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"downloadpcx"</code><code class="c# plain">)]</code></div><div class="line number19 index18 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">downloadpcx(</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">filename,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">image_name);</code></div><div class="line number20 index19 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"formfeed"</code><code class="c# plain">)]</code></div><div class="line number21 index20 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">formfeed();</code></div><div class="line number22 index21 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"nobackfeed"</code><code class="c# plain">)]</code></div><div class="line number23 index22 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">nobackfeed();</code></div><div class="line number24 index23 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"printerfont"</code><code class="c# plain">)]</code></div><div class="line number25 index24 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">printerfont(</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">x,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">y,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">fonttype,</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">rotation,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">xmul,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">ymul,</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">text);</code></div><div class="line number26 index25 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"printlabel"</code><code class="c# plain">)]</code></div><div class="line number27 index26 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">printlabel(</code><code class="c# keyword">string</code>&nbsp;<code class="c# keyword">set</code><code class="c# plain">,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">copy);</code></div><div class="line number28 index27 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"sendcommand"</code><code class="c# plain">)]</code></div><div class="line number29 index28 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">sendcommand(</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">printercommand);</code></div><div class="line number30 index29 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"setup"</code><code class="c# plain">)]</code></div><div class="line number31 index30 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">setup(</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">width,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">height,</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">speed,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">density,</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">sensor,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">vertical,</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">offset);</code></div><div class="line number32 index31 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[DllImport(</code><code class="c# string">"TSCLIB.dll"</code><code class="c# plain">,&nbsp;EntryPoint&nbsp;=&nbsp;</code><code class="c# string">"windowsfont"</code><code class="c# plain">)]</code></div><div class="line number33 index32 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">public</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">int</code>&nbsp;<code class="c# plain">windowsfont(</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">x,&nbsp;</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">y,&nbsp;</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">fontheight,</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">rotation,&nbsp;</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">fontstyle,&nbsp;</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">fontunderline,</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">szFaceName,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">content);</code></div><div class="line number34 index33 alt1"><code class="c# plain">}</code></div><div class="line number35 index34 alt2"><code class="c# keyword">namespace</code>&nbsp;<code class="c# plain">TSCLIB_DLL_IN_C_Sharp</code></div><div class="line number36 index35 alt1"><code class="c# plain">{</code></div><div class="line number37 index36 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">static</code>&nbsp;<code class="c# keyword">class</code>&nbsp;<code class="c# plain">Program</code></div><div class="line number38 index37 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">{</code></div><div class="line number39 index38 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">[STAThread]</code></div><div class="line number40 index39 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# keyword">static</code>&nbsp;<code class="c# keyword">void</code>&nbsp;<code class="c# plain">Main()</code></div><div class="line number41 index40 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">{</code></div><div class="line number42 index41 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">Application.EnableVisualStyles();</code></div><div class="line number43 index42 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">Application.SetCompatibleTextRenderingDefault(</code><code class="c# keyword">false</code><code class="c# plain">);</code></div><div class="line number44 index43 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">Application.Run(</code><code class="c# keyword">new</code>&nbsp;<code class="c# plain">Form1());</code></div><div class="line number45 index44 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">}</code></div><div class="line number46 index45 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">}</code></div><div class="line number47 index46 alt2"><code class="c# plain">}</code></div><div class="line number48 index47 alt1"><code class="c# comments">//------&nbsp;另例</code></div><div class="line number49 index48 alt2"><code class="c# plain">[System.Runtime.InteropServices.DllImport(</code><code class="c# string">"tsclib.dll"</code><code class="c# plain">)]</code></div><div class="line number50 index49 alt1"><code class="c# keyword">private</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">void</code>&nbsp;<code class="c# plain">windowsfont(</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">a,&nbsp;</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">b,&nbsp;</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">c,&nbsp;</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">d,&nbsp;</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">e,&nbsp;</code><code class="c# keyword">int</code>&nbsp;<code class="c# plain">f,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">g,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">h);</code></div><div class="line number51 index50 alt2"><code class="c# plain">[System.Runtime.InteropServices.DllImport(</code><code class="c# string">"tsclib.dll"</code><code class="c# plain">)]</code></div><div class="line number52 index51 alt1"><code class="c# keyword">private</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">void</code>&nbsp;<code class="c# plain">openport(</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">printername);</code></div><div class="line number53 index52 alt2"><code class="c# plain">[System.Runtime.InteropServices.DllImport(</code><code class="c# string">"tsclib.dll"</code><code class="c# plain">)]</code></div><div class="line number54 index53 alt1"><code class="c# keyword">private</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">void</code>&nbsp;<code class="c# plain">closeport();</code></div><div class="line number55 index54 alt2"><code class="c# plain">[System.Runtime.InteropServices.DllImport(</code><code class="c# string">"tsclib.dll"</code><code class="c# plain">)]</code></div><div class="line number56 index55 alt1"><code class="c# keyword">private</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">void</code>&nbsp;<code class="c# plain">sendcommand(</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">command);</code></div><div class="line number57 index56 alt2"><code class="c# plain">[System.Runtime.InteropServices.DllImport(</code><code class="c# string">"tsclib.dll"</code><code class="c# plain">)]</code></div><div class="line number58 index57 alt1"><code class="c# keyword">private</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">void</code>&nbsp;<code class="c# plain">setup(</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">width,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">height,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">speed,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">density,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">sensor,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">vertical,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">offset);</code></div><div class="line number59 index58 alt2"><code class="c# plain">[System.Runtime.InteropServices.DllImport(</code><code class="c# string">"tsclib.dll"</code><code class="c# plain">)]</code></div><div class="line number60 index59 alt1"><code class="c# keyword">private</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">void</code>&nbsp;<code class="c# plain">clearbuffer();</code></div><div class="line number61 index60 alt2"><code class="c# plain">[System.Runtime.InteropServices.DllImport(</code><code class="c# string">"tsclib.dll"</code><code class="c# plain">)]</code></div><div class="line number62 index61 alt1"><code class="c# keyword">private</code>&nbsp;<code class="c# keyword">static</code>&nbsp;<code class="c# keyword">extern</code>&nbsp;<code class="c# keyword">void</code>&nbsp;<code class="c# plain">printlabel(</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">Set,&nbsp;</code><code class="c# keyword">string</code>&nbsp;<code class="c# plain">Copy);</code></div><div class="line number63 index62 alt2"><code class="c# keyword">private</code>&nbsp;<code class="c# keyword">void</code>&nbsp;<code class="c# plain">button1_Click(</code><code class="c# keyword">object</code>&nbsp;<code class="c# plain">sender,&nbsp;System.EventArgs&nbsp;e)</code></div><div class="line number64 index63 alt1"><code class="c# plain">{</code></div><div class="line number65 index64 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">openport(</code><code class="c# string">"TSC&nbsp;TTP-343"</code><code class="c# plain">);</code></div><div class="line number66 index65 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">setup(</code><code class="c# string">"100"</code><code class="c# plain">,&nbsp;</code><code class="c# string">"65"</code><code class="c# plain">,&nbsp;</code><code class="c# string">"3"</code><code class="c# plain">,&nbsp;</code><code class="c# string">"10"</code><code class="c# plain">,&nbsp;</code><code class="c# string">"0"</code><code class="c# plain">,&nbsp;</code><code class="c# string">"3"</code><code class="c# plain">,&nbsp;</code><code class="c# string">"0"</code><code class="c# plain">);</code></div><div class="line number67 index66 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">clearbuffer();</code></div><div class="line number68 index67 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">windowsfont(50,&nbsp;30,&nbsp;70,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;</code><code class="c# string">"黑体"</code><code class="c# plain">,&nbsp;</code><code class="c# string">"索书号："</code><code class="c# plain">);</code></div><div class="line number69 index68 alt2"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">printlabel(</code><code class="c# string">"1"</code><code class="c# plain">,&nbsp;</code><code class="c# string">"1"</code><code class="c# plain">);</code></div><div class="line number70 index69 alt1"><code class="c# spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="c# plain">closeport();</code></div><div class="line number71 index70 alt2"><code class="c# plain">}</code></div></div></td></tr></tbody></table><p><br></p></span></div><p style="height: 35px;line-height: 30px;"><span>&nbsp;</span><span class="glyphicon glyphicon-tags" style="color: #999;">&nbsp;</span><span style="color: #099;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">關鍵字：</font></font></span><span class="keybq"><a class="label label-default" href="https://www.suajin.com/s/C%23%20TSC%E6%89%93%E5%8D%B0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">C# TSC打印</font></font></a></span></p><hr><div class="nextinfo"><p class="pull-left" style="width: 50%;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上一篇：</font></font><a href="https://www.suajin.com/detail/489"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SQL添加標識列</font></font></a></p><p class="pull-right text-right" style="width: 50%;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下一篇：</font></font><a href="https://www.suajin.com/detail/492"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">C# TSC打印二維碼和條形碼</font></font></a></p></div></div><div class="col-lg-12 row"><div class="col-lg-3 hand" id="p1"><p class="pic"><img src="./C# TSC打印- 我的空間_files/1.gif"></p><h3 class="text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">鼓掌</font></font></h3><p class="text-center" style="color: rgb(200, 100, 50);"><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0</font></font></span><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">人</font></font></span></p></div><div class="col-lg-3 hand" id="p2"><p class="pic"><img src="./C# TSC打印- 我的空間_files/2.gif"></p><h3 class="text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">正能量</font></font></h3><p class="text-center" style="color: rgb(200, 100, 50);"><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></span><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">人</font></font></span></p></div><div class="col-lg-3 hand" id="p3"><p class="pic"><img src="./C# TSC打印- 我的空間_files/3.gif"></p><h3 class="text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贊</font></font></h3><p class="text-center" style="color: rgb(200, 100, 50);"><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0</font></font></span><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">人</font></font></span></p></div><div class="col-lg-3 hand" id="p4"><p class="pic"><img src="./C# TSC打印- 我的空間_files/4.gif"></p><h3 class="text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">呵呵</font></font></h3><p class="text-center" style="color: rgb(200, 100, 50);"><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0</font></font></span><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">人</font></font></span></p></div></div><div class="col-lg-12"><hr></div><div class="col-lg-12"><div class="panel panel-default"><div class="panel-heading"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">評論區</font></font></strong></div><div class="panel-body"><ul class="commentList" style="padding:0;"></ul><hr><div class="text-center"><div class="hidden" id="cancel" style="margin:10px;"><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></span><span class="comment-author" id="author"></span><button class="btn btn-default radius" id="btn3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">取消回复</font></font></button></div></div><div><div id="editor"><div style="background-color:#f1f1f1; border:1px solid #ccc;" class="w-e-toolbar" id="toolbar-elem6484807716392424"><div class="w-e-menu" style="z-index:101;"><i class="w-e-icon-header"></i></div><div class="w-e-menu" style="z-index:101;">
+            <i class="w-e-icon-bold"></i>
+        </div><div class="w-e-menu" style="z-index:101;"><i class="w-e-icon-text-heigh"></i></div><div class="w-e-menu" style="z-index:101;"><i class="w-e-icon-font"></i></div><div class="w-e-menu" style="z-index:101;">
+            <i class="w-e-icon-italic"></i>
+        </div><div class="w-e-menu" style="z-index:101;">
+            <i class="w-e-icon-underline"></i>
+        </div><div class="w-e-menu" style="z-index:101;">
+            <i class="w-e-icon-strikethrough"></i>
+        </div><div class="w-e-menu" style="z-index:101;"><i class="w-e-icon-pencil2"></i></div><div class="w-e-menu" style="z-index:101;"><i class="w-e-icon-paint-brush"></i></div></div><div style="border:1px solid #ccc; border-top:none; height:300px; z-index:100;" class="w-e-text-container"><div contenteditable="true" style="width:100%; height:100%;" class="w-e-text" id="text-elem5888513252768759"><p><br></p></div></div></div><div class="text-right" style="margin:10px;"><button class="btn btn-primary radius" id="btn1" name="name"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">發表評論</font></font></button></div></div></div></div></div></div><div class="col-lg-3"><h5><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">相關文章</font></font></h5><ul class="index_recd" style="padding-left:0;"><li><a href="https://www.suajin.com/detail/2962" title=".NET中的XML註釋" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.NET中的XML註釋</font></font></a><span class="glyphicon glyphicon-fire"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1061</font></font></span></li><li><a href="https://www.suajin.com/detail/182" title="VS 配置全局VC++ 目錄" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">VS 配置全局VC++ 目錄</font></font></a><span class="glyphicon glyphicon-fire"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4293</font></font></span></li><li><a href="https://www.suajin.com/detail/646" title="無法嵌入互操作類型“Microsoft.Office.Interop.Word.ApplicationClass”。 請改用適用的接口。" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">無法嵌入互操作類型“Microsoft.Office.Interop.Word.ApplicationClass”。</font><font style="vertical-align: inherit;">請改用適用的接口。</font></font></a><span class="glyphicon glyphicon-fire"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">993</font></font></span></li><li><a href="https://www.suajin.com/detail/4158" title="c#解析url字符串" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">c#解析url字符串</font></font></a><span class="glyphicon glyphicon-fire"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1945</font></font></span></li><li><a href="https://www.suajin.com/detail/320" title="main.c:382: fatal error: opening dependency file .dep/main.od: No such file or directory" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">main.c:382: fatal error: opening dependency file .dep/main.od: No such file or directory</font></font></a><span class="glyphicon glyphicon-fire"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1760</font></font></span></li><li><a href="https://www.suajin.com/detail/1410235950168150016" title="NodeJS使用mkdir創建多級目錄" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NodeJS使用mkdir創建多級目錄</font></font></a><span class="glyphicon glyphicon-fire"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">832</font></font></span></li><li><a href="https://www.suajin.com/detail/294" title="c#保存字節數組到文件" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">c#保存字節數組到文件</font></font></a><span class="glyphicon glyphicon-fire"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">955</font></font></span></li><li><a href="https://www.suajin.com/detail/852" title="C# 獲取MAC地址" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">C# 獲取MAC地址</font></font></a><span class="glyphicon glyphicon-fire"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">916</font></font></span></li><li><a href="https://www.suajin.com/detail/830" title="Cannot read property &#39;toLowerCase&#39; of undefined" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cannot read property 'toLowerCase' of undefined</font></font></a><span class="glyphicon glyphicon-fire"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1037</font></font></span></li><li><a href="https://www.suajin.com/detail/606" title="using 語句中使用的類型必須可隱式轉換為“System.IDisposable”" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">using 語句中使用的類型必須可隱式轉換為“System.IDisposable”</font></font></a><span class="glyphicon glyphicon-fire"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4935</font></font></span></li></ul><hr><h5><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">企業級大促</font></font></h5><a href="https://promotion.aliyun.com/ntms/act/vmpt/aliyun-group/home.html?userCode=ptw1puaw"><img class="img-responsive lazyload" src="./C# TSC打印- 我的空間_files/250.jpg" alt="企業級大促"></a></div></div></section><nav class="navbar navbar-default"><p class="text-center" style="padding-top:10px;"><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Copyright © 2018&nbsp;&nbsp;</font></font></span><a href="https://www.suajin.com/" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我的空間</font></font></a><font style="vertical-align: inherit;"><a href="https://beian.miit.gov.cn/" target="_blank"><font style="vertical-align: inherit;">閩ICP備17023514號-2</font></a></font><span>&nbsp;&nbsp;</span><a href="https://beian.miit.gov.cn/" target="_blank"><font style="vertical-align: inherit;"></font></a></p></nav><script>String.prototype.startWith = function (str) {
+    var reg = new RegExp("^" + str);
+    return reg.test(this);
+};
+
+/*通过地址栏url激活菜单状态*/
+$("div .navbar-nav li a").each(function (index, item) {
+    if(String(window.location)===$($(this))[0].href)
+    {
+        $(this).removeAttr("data-hover");
+        $(this).parent().addClass('active').siblings().removeClass("active");
+        return false;
+    }
+    else if (String(window.location).startWith($($(this))[0].href) && index!==0) {
+        $(this).removeAttr("data-hover");
+        $(this).parent().addClass('active').siblings().removeClass("active");
+        return false;
+    }
+});
+$("#txtFind").keyup(function (event) {
+    if (event.keyCode === 13) {
+        find();
+    }
+});
+
+if(top.location!==window.location)
+{
+    top.location=window.location;
+}
+
+function find() {
+    const s = $("#txtFind").val().trim();
+    if (s === '') {
+        alert('搜索内容不能为空');
+    }
+    else {
+        var str = encodeURIComponent(s);
+        var re = new RegExp("/", "g");
+        var Newstr = str.replace(re, "%2F");
+        window.location.href = "/s/" + Newstr;
+    }
+}
+function baidu() {
+    window.open("https://www.baidu.com/s?wd="+$('#txtFind').val(), '_blank').location;
+}</script><script src="./C# TSC打印- 我的空間_files/shCore.pack.js.下載"></script><script src="./C# TSC打印- 我的空間_files/xss.js.下載"></script><script src="./C# TSC打印- 我的空間_files/wangEditor.min.js.下載"></script><script>const E = window.wangEditor;
+const editor = new E('#editor');
+editor.customConfig.zIndex = 100;
+editor.customConfig.menus = [
+    'head',
+    'bold',
+    'fontSize',
+    'fontName',
+    'italic',
+    'underline',
+    'strikeThrough',
+    'foreColor',
+    'backColor'
+];
+editor.create();
+SyntaxHighlighter.all();
+$(function () {
+    // Line wrap back
+    var shLineWrap = function () {
+        $('.syntaxhighlighter').each(function () {
+            // Fetch
+            var $sh = $(this),
+                $gutter = $sh.find('td.gutter'),
+                $code = $sh.find('td.code');
+            // Cycle through lines
+            $gutter.children('.line').each(function (i) {
+                // Fetch
+                var $gutterLine = $(this),
+                    $codeLine = $code.find('.line:nth-child(' + (i + 1) + ')');
+                //console.log($gutterLine);
+                // Fetch height
+                var height = $codeLine.height() || 0;
+                if (!height) {
+                    height = 'auto';
+                } else {
+                    height = height += 'px';
+                    //alert(height);
+                }
+                // Copy height over
+                $gutterLine.attr('style', 'height: ' + height + ' !important; !important;'); // fix by Edi, for JQuery 1.7+ under Firefox 15.0
+                //console.log($gutterLine.height(), height, $gutterLine.text(), $codeLine);
+            });
+        });
+    };
+
+    // Line wrap back when syntax highlighter has done it's stuff
+    var shLineWrapWhenReady = function () {
+        if ($('.syntaxhighlighter').length === 0) {
+            setTimeout(shLineWrapWhenReady, 10);
+        } else {
+            shLineWrap();
+        }
+    };  // Fire
+    shLineWrapWhenReady();
+});
+
+$("#btn1").click(function () {
+    let txt = editor.txt.text();
+    if (txt.toString().trim() === "") {
+        alert('评论不能为空！');
+    }
+    else {
+        $.ajax({
+            dataType: 'json',
+            method: 'post',
+            url: '/setComment/',
+            async: true,
+            data: JSON.stringify({content: editor.txt.html(),id:'491',father:$("#btn1").attr("name").replace('name',''),k: '16733189672755766',s: '035cc1095402ff660cb6da487743d12a80c36bdc0ab1170b74fb37eb1eedc82c'}),
+            contentType: "application/json",
+            'Content-Type': "utf-8",
+            success: function (data) {
+                if (data.status === 200) {
+                    alert('发表成功，等待审核！');
+                    editor.txt.clear();
+                }
+                else {
+                    alert('发表失败，请稍后再试！');
+                }
+            },
+            error: function (data) {
+                alert('发表失败，请稍后再试！');
+            }
+        });
+    }
+});
+$(".btn2").click(function () {
+    $("#btn1").attr("name",this.name);
+    $("#author").text($(this).parents().children(":first").text());
+    $("#cancel").removeClass("hidden");
+    window.location.href='#cancel';
+});
+$("#btn3").click(function () {
+    $("#btn1").attr("name", "name");
+    $("#cancel").addClass("hidden");
+});
+$(".hand").click(function () {
+    var currentObj = $(this).children(1).children(1)[1];
+    $(".hand").removeClass("hand").off();
+    $.ajax({
+        dataType: 'json',
+        method: 'post',
+        url: '/detail/491',
+        async: true,
+        data: JSON.stringify({
+            id: '491',
+            v: this.id,
+            k: '16733189672755765',
+            s: 'f12bb40f4a6e5c0b08d90a1806e02cb5da458897b447f665d7b23f9fa1cd2040'
+        }),
+        contentType: "application/json",
+        'Content-Type': "utf-8",
+        success: function (data) {
+            if (data.status === 200) {
+                var n = Number(currentObj.innerText);
+                currentObj.innerText = n + 1;
+            }
+            else {
+                alert('评价失败，请稍后再试！');
+            }
+        },
+        error: function (data) {
+            alert('评价失败，请稍后再试！');
+        }
+    });
+});
+
+$('#dc').find('img').each(function () {
+    if (!$(this).hasClass('defaultimg'))
+    {
+        $(this).wrap("<a href='" + this.src + "'  target='_blank'/>");
+    }
+});</script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./C# TSC打印- 我的空間_files/translate_24dp.png" width="20" height="20" alt="Google 翻譯"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">原文</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">建議更好的譯法</span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><script>//标签
+$(".tags a").each(function () {
+    var x = 9;
+    var y = 0;
+    var rand = parseInt(Math.random() * (x - y + 1) + y);
+    $(this).addClass("tags" + rand)
+});
+
+(function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();</script><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
