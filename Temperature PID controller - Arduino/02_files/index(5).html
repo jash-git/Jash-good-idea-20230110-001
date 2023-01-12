@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://s0.2mdn.net/sadbundle/9755328600410344257/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="ad.size" content="width=300,height=250">
+        <style>
+            html,body {
+                width:100%;
+                height:100%;
+                margin:0;
+                overflow:hidden;
+            }
+            iframe {
+                border:0;
+                opacity:0;
+                overflow:hidden;
+            }
+        </style>
+        <script>
+var clickTag1 = "https://redirect.zuuvi.com/eyJiYW5uZXIiOnsidGVtcGxhdGVfaWQiOiI1Zjc1YWFjYi1hYzdkLTQwMGEtYTBlZS1kYmYyMWU1MjE1NGQiLCJmb3JtYXRfaWQiOiIzOTUzZDM1ZC05YWJkLTRmMmYtYTE0MC1lZGYzNTU3OWVkZjkiLCJiYW5uZXJfaWQiOiJ2ZDJLIn0sImNsaWNrIjp7InVybCI6Imh0dHBzOi8vbGluay56dXV2aS5jb20vM2RYcWh3NjNpYUlaZHU3bCJ9fQ==";
+</script>
+    <script type="text/javascript">
+    
+  (function() {
+    var MAX_URL_PARAM_LENGTH = 34;
+    var CLICK_X_URL_KEY = 'nx';
+    var CLICK_Y_URL_KEY = 'ny';
+    var CREATIVE_DIMENSIONS_KEY = 'dim';
+    var AD_URL_PARAM = '&adurl=';
+
+    var relegateNavigation = '';
+    var urlParamMap = {};
+
+    urlParamMap[CLICK_X_URL_KEY] = null;
+    urlParamMap[CLICK_Y_URL_KEY] = null;
+    urlParamMap[CREATIVE_DIMENSIONS_KEY] = null;
+
+    var handleClickTagMessage = function(e) {
+      try {
+        var eventData = JSON.parse(e.data);
+      } catch (err) {
+        return;
+      }
+      if (eventData.isInitClickTag) {
+        if (eventData.clickTags) {
+          for (var i = 0; i < eventData.clickTags.length; i++) {
+            var clkTag = eventData.clickTags[i];
+            window[clkTag.name] = clkTag.url;
+          }
+        } else if (eventData.clickTag) {
+          window.clickTag = eventData.clickTag;
+        }
+        relegateNavigation = eventData.relegateNavigation;
+      }
+    };
+
+    var storeClickCoordinates = function(e) {
+      urlParamMap[CLICK_X_URL_KEY] = Math.round(e.clientX);
+      urlParamMap[CLICK_Y_URL_KEY] = Math.round(e.clientY);
+    };
+
+    var getCreativeDimensions = function() {
+      return window.innerWidth + 'x' + window.innerHeight;
+    }
+
+    var getExitClickParams = function(e) {
+      urlParamMap[CREATIVE_DIMENSIONS_KEY] = getCreativeDimensions();
+
+      var exitParams = '';
+      for (var key in urlParamMap) {
+        exitParams += '&' + key + '=';
+        if (urlParamMap[key] !== null) {
+          exitParams += urlParamMap[key];
+        }
+      }
+      return exitParams;
+    }
+
+    var appendExitClickParams = function(url) {
+      var adUrlIndex = url.toLowerCase().indexOf(AD_URL_PARAM);
+      var paramsToBeAdded = getExitClickParams();
+      if (adUrlIndex > -1 && paramsToBeAdded.length <= MAX_URL_PARAM_LENGTH) {
+        url = url.substr(0, adUrlIndex) + paramsToBeAdded +
+          url.substr(adUrlIndex);
+      };
+      return url;
+    };
+
+    if (open.call) {
+      window.open = function(open) {
+        return function(url, name, features) {
+          url = appendExitClickParams(url);
+          if (relegateNavigation === 'parent') {
+            var message = {'clickTag': url, 'isPostClickTag': true};
+            parent.postMessage(JSON.stringify(message), '*');
+          } else {
+            var args = [url, name];
+            if (features) {
+              args.push(features);
+            }
+            open.apply(window, args);
+          }
+        };
+      }(window.open);
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener(
+          'message', handleClickTagMessage, false);
+      window.addEventListener('mousedown', storeClickCoordinates, true);
+    } else {
+      window.attachEvent('onmessage', handleClickTagMessage);
+    }
+  })();
+    
+  </script></head>
+    <body>
+        <iframe id="banner" style="width: 100%; height: 100%; opacity: 1;" src="./index(1).html"></iframe><script>var clicktags = {'global': 'clickTag1'};
+
+window.addEventListener("message", function (event) {
+    if (event.data.type === "zuuvi-click" && ("uuid" in event.data || "href" in event.data)) {
+        var href = window[clicktags[event.data.uuid]] || event.data.href;
+        if (location.search.split("dfpclick=")[1]) {
+            href = unescape(location.search.split("dfpclick=")[1]) + href;
+        }
+        window.open(href, "_blank");
+    }
+}, false);
+var iframe = document.getElementById('banner');
+iframe.addEventListener('load', function (event) {
+    iframe.contentWindow.postMessage({clicktagHandler: true}, '*');
+    this.style.opacity = 1;
+});
+
+iframe.src = 'https://cdn.zuuvi.com/2eHz/auMO/3BJY/vd2K/CE5F/live/index.html' + window.location.search;</script>
+    
+</body></html>

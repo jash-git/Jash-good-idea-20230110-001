@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://electronoobs.com/eng_arduino_tut24_2.php -->
+<html lang="en" style="scroll-behavior: auto !important;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Temperature PID Arduino controller tutorial</title>
+  
+  
+  
+  <link rel="shortcut icon" href="https://electronoobs.com/images/icon.ico">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="./02_files/bootstrap.css">
+  
+  <script src="./02_files/f.txt"></script><script src="./02_files/sdk.js.下載" async="" crossorigin="anonymous"></script><script src="./02_files/f(1).txt" id="google_shimpl"></script><script id="facebook-jssdk" src="./02_files/sdk.js(1).下載"></script><script async="" src="./02_files/analytics.js.下載"></script><script src="./02_files/jquery.min.js.下載"></script>
+  
+  <script src="./02_files/bootstrap.min.js.下載"></script>
+    
+    
+
+  
+
+
+
+<script src="./02_files/firebase-app.js.下載"></script>
+<script src="./02_files/firebase-analytics.js.下載"></script>
+<script src="./02_files/firebase-messaging.js.下載"></script>
+<script>
+	if('serviceWorker' in navigator){
+		window.addEventListener('load',()=>{
+			navigator.serviceWorker.register('../firebase-messaging-sw.js');
+		});
+	}
+</script>
+
+<script src="./02_files/axios.min.js.下載"></script>	
+<script src="./02_files/notificaciones.js.下載"></script>
+    
+
+
+
+<script async="" src="./02_files/f(2).txt"></script>
+
+
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7895687552151505",
+    enable_page_level_ads: true,
+    overlays: {bottom: true}
+});
+</script>
+  
+  
+<script src="./02_files/platform.js.下載" gapi_processed="true"></script>  
+
+
+<script>window._epn = {campaign:5338106513};</script>  
+
+
+<script src="./02_files/epn-smart-tools.js.下載"></script>
+
+
+
+  
+ <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-62541190-1', 'auto');
+      ga('send', 'pageview');
+    function MM_swapImgRestore() { //v3.0
+      var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+    }
+    function MM_preloadImages() { //v3.0
+      var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+        var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+        if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+    }
+    
+    function MM_findObj(n, d) { //v4.01
+      var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+        d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+      if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+      for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+      if(!x && d.getElementById) x=d.getElementById(n); return x;
+    }
+    
+    function MM_swapImage() { //v3.0
+      var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+       if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+    }
+  </script>
+  
+    
+<link rel="stylesheet" href="./02_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./02_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  
+  
+
+<meta http-equiv="origin-trial" content="Az6AfRvI8mo7yiW5fLfj04W21t0ig6aMsGYpIqMTaX60H+b0DkO1uDr+7BrzMcimWzv/X7SXR8jI+uvbV0IJlwYAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+USTya+tNvDPaxUgJooz+LaVk5hPoAxpLvSxjogX4Mk8awCTQ9iop6zJ9d5ldgU7WmHqBlnQB41LHHRFxoaBwoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7FovoGr67TUBYbnY+Z0IKoJbbmRmB8fCyirUGHavNDtD91CiGyHHSA2hDG9r9T3NjUKFi6egL3RbgTwhhcVDwUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><link rel="preload" href="./02_files/f(3).txt" as="script"><script type="text/javascript" src="./02_files/f(3).txt"></script><link rel="preload" href="./02_files/f(4).txt" as="script"><script type="text/javascript" src="./02_files/f(4).txt"></script><script src="./02_files/js" async=""></script><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style><style>html::-webkit-scrollbar, body::-webkit-scrollbar{ width: 0 !important; height: 0 !important }</style><style>* {
+          transition: none !important;
+          transition-delay: 0s !important;
+          animation-duration: 0s !important;
+          animation-delay: 0s !important;
+        }</style><style>[stickyclass="sticky"], ess-particle-table [role="row"], [acxscrollhost] .header-sticky-container  { transform: translate(0px, 0px) !important }</style><style>.sqs-layout .sqs-row .sqs-block-content figure { opacity: 1 !important; }</style></head><body style="position: relative !important; min-width: 100vw !important; min-height: 100vh !important;"><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+<script>
+	(function(d, s, id) {
+  	var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=249946393271&autoLogAppEvents=1';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+  
+
+
+<script>
+fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js').catch(() => {
+	let adp_underlay = document.createElement('div');
+	adp_underlay.className = 'adp-underlay';
+	document.body.appendChild(adp_underlay);
+	let adp = document.createElement('div');
+	adp.className = 'adp';
+	adp.innerHTML = `
+		<h3>Ad Blocker Detected!</h3>
+		<p>We use advertisements to keep our website online. To help us out, could you please <strong>disable it for our website</strong>, thanks!</p>
+		<p id="ok_p"><img id="ok_img" src="images/ok.png" alt="disable ad block thank you" width="100%" height="100%" /></p>
+		<a href="#">Okay</a>
+	`;
+	document.body.appendChild(adp);
+	adp.querySelector('a').onclick = e => {
+		e.preventDefault();
+		document.body.removeChild(adp_underlay);
+		document.body.removeChild(adp);
+	};
+});
+</script>
+
+
+  
+  
+<style>
+@media (max-width: 768px) {
+	 .adp {
+		 width: 80% !important;
+	}
+
+}
+	  
+	  
+	  #ok_p{
+		  width: 100%;
+		  height: 200px;
+		  object-fit: cover;
+	  }
+	  
+	  #ok_img{
+		  width: 100%;
+		  height: 200px;
+		  object-fit: contain;
+	  }
+	  .adp {
+	display: flex;
+	box-sizing: border-box;
+	flex-flow: column;
+	position: fixed;
+	z-index: 99999;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	height: 500px;
+	background-color: #ffffff;
+	padding: 20px;
+	border-radius: 5px;
+}
+.adp h3 {
+	border-bottom: 1px solid #eee;
+	margin: 0;
+	padding: 15px 0;
+}
+.adp p {
+	 flex-grow: 1;
+}
+.adp a {
+	display: block;
+	text-decoration: none;
+	width: 100%;
+	background-color: #366ed8;
+	text-align: center;
+	padding: 10px;
+	box-sizing: border-box;
+	color: #ffffff;
+	border-radius: 5px;
+}
+.adp a:hover {
+	background-color: #3368cc;
+}
+.adp-underlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 99998;
+}
+	  
+	  
+	  
+	body {	  
+	  font-size: 20px;	  
+	}
+	
+	.h1 {
+	font-size: 46px;
+	
+	}
+	h2,
+	.h2 {
+	  font-size: 30px;
+	}
+	h3,
+	.h3 {
+	  font-size: 24px;
+	}  
+  
+  	lightblue
+	{
+		font-size: 15px;
+		color:#39F;
+	}
+	
+	titleblue
+	{
+		font-size: 30px;
+		color:#06F;
+		text-align: center;
+	}
+  
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 180px;
+      border-radius: 0;
+	  background-color:#FFF;
+	  color:#F90;
+    }
+	
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+	  
+	  /* The Close Button */
+	.close {
+	  position: absolute;
+		top: 15px;
+		right: 35px;
+		color: #337ab7;
+		font-size: 40px;
+		font-weight: bold;
+		transition: 0.3s;
+		background-color: white !important;
+		border-radius: 20px  !important;
+		width: 42px  !important;
+	}
+
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #CCC;
+      padding: 25px;
+    }
+	
+	video#bgvid {
+	position: absolute;
+	top: 145px;
+	left: 50%;
+	
+	width: 99.5%;
+	height: auto;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	
+}
+
+.photo_bg
+{
+	position: absolute;
+	top: 145px;
+	left: 50%;
+	
+	width: 99.5%;
+	height: auto;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+
+
+red
+{
+	color:#F30;
+	font-size:18px;
+}
+
+p
+{
+	text-align: justify;	
+}
+
+orange
+{
+	color:#F90;
+	
+}
+
+para_footer
+{
+	text-align: center;
+	color:#967118;
+	font-size:26px;
+}
+
+.centrar_bloque
+{
+	float: left;
+	width: 100%;
+	text-align: center;
+	width: 100%;	
+}
+
+.busqueda
+{
+	left: 700px;
+	float:right;
+	
+	
+	
+	position: fixed;
+	margin-left: 10px;
+	float: left;
+	z-index: 300;
+	left: 10px;
+	bottom:30px;	
+}
+
+
+.para_code
+{
+	width: 100%;
+	height: 300px;
+	float: left;
+	overflow: scroll;
+	overflow-x: hidden;
+	text-align: left;	
+}
+
+
+
+
+
+
+
+
+
+
+
+   .navbar {
+      margin-bottom: 180px;
+      border-radius: 0;
+	  background-color:#FFF;
+	  color:#F90;
+    }
+	
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #CCC;
+      padding: 25px;
+    }
+	
+	video#bgvid {
+	position: absolute;
+	top: 145px;
+	left: 50%;
+	
+	width: 99.5%;
+	height: auto;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	
+}
+
+.photo_bg
+{
+	position: absolute;
+	top: 145px;
+	left: 50%;
+	
+	width: 99.5%;
+	height: auto;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+
+.title_line
+{
+	background-color:#337ab7;
+	height: 5px;
+	
+}
+
+
+trending_title
+{
+	color:#F90;
+	font-size:26px;
+	background-color:#F0F0F0;
+}
+more_posts_title
+{
+	color:#F90;
+	font-size:18px;
+	background-color:#F0F0F0;
+}
+red
+{
+	color:#F30;
+	font-size:18px;
+}
+
+p
+{
+	text-align: justify;	
+}
+
+orange
+{
+	color:#F90;
+	font-size:26px;
+}
+
+small_text
+{
+	color:#003;
+	font-size:13px;
+}
+
+mobile_title
+{ 
+	font-family: Impact, Charcoal, sans-serif;
+	color: #FFF;
+	font-size: 45px;
+	text-transform: uppercase;
+	
+	background-color:#337ab7;	
+	font-weight: bolder;
+	text-align: center;
+	
+}
+div.last_tut_left_title
+{
+	color: #FFF;
+	font-size: 30px;
+	text-align: left;
+	background-color:#39C;	
+}
+
+
+div.last_tut_left_descrip
+{
+	font-size: 30px;
+	text-align: left;
+}
+
+
+para_footer
+{
+	text-align: center;
+	color:#967118;
+	font-size:26px;
+}
+
+.centrar_bloque
+{
+	float: left;
+	width: 100%;
+	text-align: center;
+	
+}
+
+.welcome_EN
+{
+	float: left;
+	width: 100%;
+	height: 40px;
+
+}
+
+.welcome_EN_1
+{
+	float: left;
+	width: 100%;
+	height: 10px;
+	margin-top:0px;
+	margin-bottom:10px;
+
+}
+
+
+.tut_title
+{
+	color: #000;
+	background-color: transparent;
+	font-size: 16px;
+	padding-left: 10px;
+	margin-bottom: 5px;
+	text-transform: none;
+	font-weight: bolder;
+	float:left;
+	width:100%;
+}
+	  
+.tut_title_by{
+	font-size: 11px;
+	float: left;
+	margin-bottom: 10px;
+}
+	  
+.tut_title_share{
+	width: 100%;
+	float: left;
+    text-align: right;	
+}
+
+.tut_title_line
+{
+	widht:100%;
+	height:5px;
+	background-color: #337ab7;	
+	margin-bottom:3px;
+	border-radius: 5px;
+	}
+
+.tut_line
+{
+	widht:100%;
+	height:5px;
+	background-color: #337ab7;	
+	margin-top:5px;
+	margin-bottom:25px;
+}
+
+link_reading
+{
+	background-color:rgba(51, 153, 204, .2);	
+	padding-left:4px;
+	padding-right:4px;
+	font-size:26px;
+	text-align:justify;
+}
+
+
+.tut_line_2
+{
+	widht:100%;
+	height:10px;
+	background-color:rgba(51, 153, 204, .2);	
+	margin-top:5px;
+	margin-bottom:25px;
+}
+.tut_text
+{
+	font-size:16px;
+	text-align: justify;	
+	line-height: initial;
+	margin-top: 10px;
+	height: 80px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background-image: linear-gradient(to top, white, transparent);
+}
+	  
+	  
+.tut_text_overflow
+{
+	width: 92%;
+    bottom: 100px;
+    height: 30px;
+    position: absolute;
+    background-image: linear-gradient(to top, #ffffff, transparent);    
+}
+	  
+	  
+	main_title
+	  {
+		  font-size: 35px !important;
+    	  border-top: 5px solid #337ab7 !important;	 
+		  color: #337ab7 !important;
+	  }
+	  
+	  part_1{
+		  font-size: 25px !important;
+    	 border-top: 3px solid #337ab7 !important;	 
+		  color: #337ab7 !important;
+		  background-color: transparent !important;
+	  }
+	  
+	  main_top_title_back{
+		 font-size: 22px !important;	 
+	  }	  
+	  
+	  main_top_title{
+		font-size: 22px !important;	  
+	  }
+
+
+
+@media (max-width: 768px) {
+	  	main_title
+	  {
+		  font-size: 20px !important;    		  
+	  }
+	 part_1{
+		  font-size: 20px;
+    	
+	  }
+	 main_top_title_back{
+		 font-size: 16px !important;	 
+	  }	  
+	  
+	  main_top_title{
+		font-size: 16px !important;	  
+	  }
+
+}
+	  
+	  
+fecha
+{
+	font-size: 14px;
+	text-align: justify;
+	color: #09F;
+}
+
+.blog_blocks_text
+{
+	padding-top:10px;
+	float:left;
+	width:100%;
+	height:auto;
+	font-size: 20px;
+	font-weight: 300;
+	text-align: justify;
+	text-justify: inter-word;
+	color: #000;
+}
+
+
+main_top_title
+{
+	font-size: 35px;
+	background-color: #B7E8E7;
+	font-weight: bolder;
+}
+
+  </style>
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+<div class="photo_bg" style="width: 2233.97px !important; height: 552.656px !important; inset: 145px auto auto 1122.6px !important;">
+<img src="./02_files/BG_GIF4.gif" width="100%" height="100%">
+</div>
+
+
+    
+    
+<!--<video autoplay loop poster="" id="bgvid">
+    <source src="images/BG8.webm" type="video/webm">
+   
+</video>
+ -->
+
+  
+
+
+<style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+		margin-bottom: 180px;
+      	border-radius: 0;
+	  	background-color:#337ab7;
+	  	color:#FFF;
+		position: fixed;
+		float: left;
+   		width: 100%;
+    	z-index: 100;
+		top: 0;
+    }
+	
+	.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #0066CC;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #759dc0;
+  
+}
+
+red
+{
+	color: #C03;
+}
+
+#li_menu_1{
+	margin-top: 7px;
+	padding-left: 10px;
+	color: #337ab7;
+	width: 100%;
+	background-color: #fff;
+	height: 38px;
+	color: #b2b2b2;
+	font-size: 12px;
+	border: 0;
+	padding: 0 10px;
+	border-radius: 5px;
+	margin-left: 15px;		
+	}
+    
+</style>
+
+
+<nav class="navbar navbar-inverse" style="visibility: hidden !important; overflow: hidden !important;">
+	<div class="container-fluid" style="max-width: 1600px; font-size: 14px;">	  
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="border: 0;">
+				<span class="icon-bar" style="background-color: #FFF;"></span>
+				<span class="icon-bar" style="background-color: #FFF;"></span>
+				<span class="icon-bar" style="background-color: #FFF;"></span>                        
+			</button>
+			<a class="navbar-brand" href="https://electronoobs.com/index.php">HOME</a>
+		</div>
+		
+		<div class="collapse navbar-collapse" id="myNavbar">
+		
+			
+		<ul class="nav navbar-nav navbar-left" style="width: 250px;"> 
+			<li id="li_menu_1">
+				<form action="https://electronoobs.com/search" method="POST">
+					<input style="border: 0; height: 38px; background-color: transparent; width: 80%;" type="text" name="search" placeholder="Search...">
+					<button style="position: absolute; top: 0; right: 0; background-color: #efefef; width: 38px; color: #337ab7;
+    				font-size: 15px; height: 100%; border: 0; border-radius: 5px;" type="submit"><i class="fas fa-search"></i></button>
+				</form>
+			</li>			
+      	</ul>
+			
+			
+	
+			
+			
+			
+			
+			
+			
+		
+      <ul class="nav navbar-nav navbar-right">
+           
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="https://electronoobs.com/eng_arduino_tut24_2.php#"><span class="glyphicon glyphicon-book"></span> TUTORIALS
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="https://electronoobs.com/eng_tutoriales_arduino.php"><i class="fas fa-microchip"></i> Arduino</a></li>
+          <li><a href="https://electronoobs.com/eng_tutoriales_circuitos.php"><i class="fas fa-project-diagram"></i> Circuits</a></li>
+          <li><a href="https://electronoobs.com/eng_tutoriales_robotica.php"><i class="fas fa-robot"></i> Robotics</a></li>
+        </ul>
+      </li>
+      
+     
+     
+     
+     <li><a href="https://electronoobs.com/blogs.php"> <span class="glyphicon glyphicon-th-list"></span> BLOG</a></li>
+     
+     
+     
+     <li><a target="_blank" href="https://electronoobs.io/forum"> <span class="glyphicon glyphicon-blackboard"></span>Forum</a></li>
+     
+  		
+      
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="https://electronoobs.com/eng_arduino_tut24_2.php#"><span class="glyphicon glyphicon-modal-window"></span> 3D PRINTING
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="https://electronoobs.com/eng_impresoras.php">Printers</a></li>
+          <li><a href="https://electronoobs.com/eng_materiales.php">Materials</a></li>
+          <li><a href="https://electronoobs.com/eng_objetos.php">3D objects</a></li>
+          <li><a href="https://electronoobs.com/eng_edit3D.php">3D edit</a></li>
+        </ul>
+      </li>
+		  
+		  
+		<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="https://electronoobs.com/eng_arduino_tut24_2.php#"><i class="fas fa-piggy-bank"></i> SUPPORT
+        <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			  <li><a href="https://electronoobs.com/eng_donate.php"> <span class="glyphicon glyphicon-piggy-bank"></span> Donate</a></li>
+				<li><a href="https://electronoobs.com/eng_reviews.php"> <span class="glyphicon glyphicon-list-alt"></span> Reviews</a></li>
+				<li><a href="https://electronoobs.com/eng_advertising.php"> <span class="glyphicon glyphicon-bookmark"></span> Advertising</a></li>
+
+			</ul>
+      	</li>
+		  
+		  
+		<li><a target="_blank" href="https://electronoobs.io/shop/"> <i class="fas fa-shopping-cart"></i> SHOP</a></li>
+      	
+		  
+		  
+		  
+					<li><a href="https://electronoobs.com/login.php"> <i class="fas fa-sign-in-alt"></i> LOGIN</a></li> 
+		  
+		  
+		  
+		 
+		
+		 
+      
+  
+      </ul>
+      
+      
+      
+      
+      
+      
+      
+    </div>
+  </div>
+</nav><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+
+  
+<div class="container-fluid text-center" style="height: auto !important;">   
+
+  <!--
+<div class="busqueda">
+    
+    <div class="search_1">
+	<div class="search_2">
+	<form method="GET" action="https://www.google.com/search">
+        <div class="search_3">
+            <i class="search_4">
+            </i>
+        <input type="hidden" name="ie" value="UTF-8">
+        <input type="hidden" name="oe" value="UTF-8">
+        <input type="text" name="q" size="25" maxlength="255" value="" placeholder="Search for any project">
+        <input type="submit" name="btnG" VALUE="search">
+        <input type="hidden" name="domains" value="https://www.electronoobs.com">
+        <input type="hidden" name="sitesearch" value="https://www.electronoobs.com">
+        </div>
+	</form> 
+	</div>
+	</div>
+</div>   
+
+<div class="youtubee">
+<div class="g-ytsubscribe" data-channelid="UCjiVhIvGmRZixSzupD0sS9Q" data-layout="full" data-onytevent="onYtEvent"></div>
+-->
+
+
+
+
+
+
+
+
+
+  
+  <div class="row content" style="height: auto !important;">
+  
+  
+  
+  <div class="col-sm-2 sidenav"> 
+  <style>
+.barra_social_media_10{
+	height: 60px;
+	float: center;
+	width: 100%;
+	background-color:#FFF;
+	}
+
+.barra_social_media_2{
+	margin:2%;
+	height: 50px;
+	float: left;
+	width: 50px;
+	
+}
+.barra_social_media_3{
+	margin-right:2%;
+	margin-bottom:2%;
+	margin-top:2%;
+	margin-left:4%;
+	height: 50px;
+	float: left;
+	width: 50px;
+	background-color: none;
+}
+
+.gearbest_side_1
+{
+  float:left;
+  width:100%;
+  height:600px;
+  float: center;
+  margin-bottom:10px;
+  margin-top:10px;
+}
+
+.gearbest_horizontal_1
+{
+  float:center;
+  width: 100%;
+  height:90px;
+  margin-bottom:10px;
+  margin-top:10px;
+
+}
+
+.ad_line
+{
+  float:center;
+  width: 100%;
+  height:20px;
+  border-bottom: 1px dotted #FC9;
+  
+ 
+}
+</style>    
+    
+    
+    
+    
+    
+    
+    
+    
+      <div class="barra_social_media_10">
+      
+      	<div class="barra_social_media_3">
+        <a href="https://www.youtube.com/c/ELECTRONOOBS" target="_blank" onmouseover="MM_swapImage(&#39;yt_link&#39;,&#39;&#39;,&#39;images/YouTube_2.png&#39;,1)" onmouseout="MM_swapImgRestore()"><img id="yt_link" src="./02_files/YouTube_1.png" width="50px" alt="yt_link"></a> 
+        </div>
+        
+        <div class="barra_social_media_2">
+        <a href="https://www.instagram.com/ELECTRONOOBS" target="_blank" onmouseover="MM_swapImage(&#39;insta_link&#39;,&#39;&#39;,&#39;images/Insta_2.png&#39;,1)" onmouseout="MM_swapImgRestore()"><img id="insta_link" src="./02_files/Insta_1.png" width="50px" alt="insta_link"></a> 
+        </div>
+        
+        <div class="barra_social_media_2">
+        <a href="https://www.facebook.com/Electronoobs" target="_blank" onmouseover="MM_swapImage(&#39;fb_link&#39;,&#39;&#39;,&#39;images/fb_2.png&#39;,1)" onmouseout="MM_swapImgRestore()"><img id="fb_link" src="./02_files/fb_1.png" width="50px" alt="fb_link"></a>
+        </div>
+        
+        <div class="barra_social_media_2">
+        <a href="https://twitter.com/ELECTRONOOBS" target="_blank" onmouseover="MM_swapImage(&#39;twitter_link&#39;,&#39;&#39;,&#39;images/twitter_2.png&#39;,1)" onmouseout="MM_swapImgRestore()"><img id="twitter_link" src="./02_files/twitter_1.png" width="50px" alt="twitter_link"></a>
+        </div>
+    </div>
+      
+      
+      
+        
+  
+  <h3><orange>PID controller for temperature</orange></h3>
+  
+      <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="./02_files/saved_resource.html" allowtransparency="true" allowfullscreen="true" frameborder="0" height="402" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" style="background: white; max-width: 100%; width: calc(100% - 2px); border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe> <script async="" defer="" src="./02_files/embed.js(1).下載"></script>
+      <br>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   
+    <div class="col-sm-8 text-left" style="height: auto !important; min-height: 0px !important;"> 
+      <h1><orange>Temperature PID controller - Arduino</orange></h1>
+      <br>
+<br>
+<h2>PART 3 <orange>PID control</orange></h2>
+<br>
+
+      
+      <p>So now that we know how to read the real temperature, let’s mount this next schematic and control the power applied to the heating element with a MOSFET. I mount the circuit on a breadboard once again and upload the next code. This second code has the PID algorithm already created. We read the temperature, calculate the error, sum the PID values and create a PWM signal on digital pin D3 that will be applied to the MOSFET. I set the desired temperature at 100 degrees and use the LCD to print the set value and the real temperture.
+      </p> 
+
+<a href="https://electronoobs.com/eng_arduino_tut24_sch2.php" target="_blank"><img src="./02_files/schematic_2.png" alt="Arduino temperature PID" width="100%" height="12%"></a>
+
+<br>
+<br>
+<br>
+ 
+ 
+<div class="centrar_bloque">
+Downlaod schematic here: <a href="https://electronoobs.com/eng_arduino_tut24_sch2.php" target="_blank"><img src="./02_files/eng_descarga.png" width="160" height="35"></a>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<h2><orange>Code for fixed PID control</orange></h2>
+<br>
+<br>
+<p>
+Ok so the code below is a bit large. But don't worry. It is very easy. We set a variable setpoint at 100 degrees for this example. Then we read the thermocouple real temperature value as in the past example. Then we use 3 constants and calculate the PID sum. Depending on that value we create a PWM signal on pin D3 and apply it to the MOSFET gate using a BJT driver. 
+<br>
+<br>
+</p>
+
+
+<div class="clearfix"></div>
+<div class="centrar_bloque">
+Download PID code without control here: <a href="https://electronoobs.com/eng_arduino_tut24_code2.php" target="_blank"><img src="./02_files/eng_descarga(1).png" width="160" height="35"></a>
+</div>
+<div class="clearfix"></div>
+
+<br>
+
+
+
+
+<div class="para_code">
+
+<link rel="stylesheet" href="./02_files/arduino-light.css">
+<link rel="stylesheet" href="./02_files/default.css">
+<script src="./02_files/highlight.pack.js.下載"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<div class="tut_cod">
+<div class="arduino_code">
+<pre><code class="arduino hljs">
+<span class="hljs-comment">/*    Max6675 Module  ==&gt;   Arduino
+ *    CS              ==&gt;     D10
+ *    SO              ==&gt;     D12
+ *    SCK             ==&gt;     D13
+ *    Vcc             ==&gt;     Vcc (5v)
+ *    Gnd             ==&gt;     Gnd      */</span>
+
+<span class="hljs-comment">//LCD config (i2c LCD screen, you need to install the LiquidCrystal_I2C if you don't have it )</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Wire.h&gt;</span> </span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;LiquidCrystal_I2C.h&gt;</span></span>
+LiquidCrystal_I2C lcd(<span class="hljs-number">0x3f</span>,<span class="hljs-number">20</span>,<span class="hljs-number">4</span>);  <span class="hljs-comment">//sometimes the adress is not 0x3f. Change to 0x27 if it dosn't work.</span>
+
+<span class="hljs-comment">/*    i2c LCD Module  ==&gt;   Arduino
+ *    SCL             ==&gt;     A5
+ *    SDA             ==&gt;     A4
+ *    Vcc             ==&gt;     Vcc (5v)
+ *    Gnd             ==&gt;     Gnd      */</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;SPI.h&gt;</span></span>
+<span class="hljs-comment">//We define the SPI pìns</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX6675_CS   10</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX6675_SO   12</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX6675_SCK  13</span>
+
+<span class="hljs-comment">//Pins</span>
+<span class="hljs-keyword">int</span> PWM_pin = <span class="hljs-number">3</span>;
+
+
+<span class="hljs-comment">//Variables</span>
+<span class="hljs-keyword">float</span> temperature_read = <span class="hljs-number">0.0</span>;
+<span class="hljs-keyword">float</span> set_temperature = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">float</span> PID_error = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">float</span> previous_error = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">float</span> elapsedTime, Time, timePrev;
+<span class="hljs-keyword">int</span> PID_value = <span class="hljs-number">0</span>;
+
+
+
+<span class="hljs-comment">//PID constants</span>
+<span class="hljs-keyword">int</span> kp = <span class="hljs-number">9.1</span>;   <span class="hljs-keyword">int</span> ki = <span class="hljs-number">0.3</span>;   <span class="hljs-keyword">int</span> kd = <span class="hljs-number">1.8</span>;
+<span class="hljs-keyword">int</span> PID_p = <span class="hljs-number">0</span>;    <span class="hljs-keyword">int</span> PID_i = <span class="hljs-number">0</span>;    <span class="hljs-keyword">int</span> PID_d = <span class="hljs-number">0</span>;
+
+
+
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">setup</span>() {
+  <span class="hljs-built_in">pinMode</span>(PWM_pin,<span class="hljs-literal">OUTPUT</span>);
+  TCCR2B = TCCR2B &amp; B11111000 | <span class="hljs-number">0x03</span>;    <span class="hljs-comment">// pin 3 and 11 PWM frequency of 980.39 Hz</span>
+  Time = <span class="hljs-built_in">millis</span>(); 
+  lcd.init();
+  lcd.backlight();
+}
+
+
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">loop</span>() {
+ <span class="hljs-comment">// First we read the real value of temperature</span>
+  temperature_read = readThermocouple();
+  <span class="hljs-comment">//Next we calculate the error between the setpoint and the real value</span>
+  PID_error = set_temperature - temperature_read;
+  <span class="hljs-comment">//Calculate the P value</span>
+  PID_p = kp * PID_error;
+  <span class="hljs-comment">//Calculate the I value in a range on +-3</span>
+  <span class="hljs-built_in">if</span>(<span class="hljs-number">-3</span> &lt; PID_error &lt;<span class="hljs-number">3</span>)
+  {
+    PID_i = PID_i + (ki * PID_error);
+  }
+
+  <span class="hljs-comment">//For derivative we need real time to calculate speed change rate</span>
+  timePrev = Time;                            <span class="hljs-comment">// the previous time is stored before the actual time read</span>
+  Time = <span class="hljs-built_in">millis</span>();                            <span class="hljs-comment">// actual time read</span>
+  elapsedTime = (Time - timePrev) / <span class="hljs-number">1000</span>; 
+  <span class="hljs-comment">//Now we can calculate the D calue</span>
+  PID_d = kd*((PID_error - previous_error)/elapsedTime);
+  <span class="hljs-comment">//Final total PID value is the sum of P + I + D</span>
+  PID_value = PID_p + PID_i + PID_d;
+
+  <span class="hljs-comment">//We define PWM range between 0 and 255</span>
+  <span class="hljs-built_in">if</span>(PID_value &lt; <span class="hljs-number">0</span>)
+  {    PID_value = <span class="hljs-number">0</span>;    }
+  <span class="hljs-built_in">if</span>(PID_value &gt; <span class="hljs-number">255</span>)  
+  {    PID_value = <span class="hljs-number">255</span>;  }
+  <span class="hljs-comment">//Now we can write the PWM signal to the mosfet on digital pin D3</span>
+  <span class="hljs-built_in">analogWrite</span>(PWM_pin,<span class="hljs-number">255</span>-PID_value);
+  previous_error = PID_error;     <span class="hljs-comment">//Remember to store the previous error for next loop.</span>
+
+  <span class="hljs-built_in">delay</span>(<span class="hljs-number">300</span>);
+  <span class="hljs-comment">//lcd.clear();</span>
+  
+  lcd.<span class="hljs-built_in">setCursor</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);
+  lcd.<span class="hljs-built_in">print</span>(<span class="hljs-string">"PID TEMP control"</span>);
+  lcd.<span class="hljs-built_in">setCursor</span>(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>);
+  lcd.<span class="hljs-built_in">print</span>(<span class="hljs-string">"S:"</span>);
+  lcd.<span class="hljs-built_in">setCursor</span>(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>);
+  lcd.<span class="hljs-built_in">print</span>(set_temperature,<span class="hljs-number">1</span>);
+  lcd.<span class="hljs-built_in">setCursor</span>(<span class="hljs-number">9</span>,<span class="hljs-number">1</span>);
+  lcd.<span class="hljs-built_in">print</span>(<span class="hljs-string">"R:"</span>);
+  lcd.<span class="hljs-built_in">setCursor</span>(<span class="hljs-number">11</span>,<span class="hljs-number">1</span>);
+  lcd.<span class="hljs-built_in">print</span>(temperature_read,<span class="hljs-number">1</span>);
+}
+
+
+
+<span class="hljs-keyword">double</span> readThermocouple() {
+
+  uint16_t v;
+  <span class="hljs-built_in">pinMode</span>(MAX6675_CS, <span class="hljs-literal">OUTPUT</span>);
+  <span class="hljs-built_in">pinMode</span>(MAX6675_SO, <span class="hljs-literal">INPUT</span>);
+  <span class="hljs-built_in">pinMode</span>(MAX6675_SCK, <span class="hljs-literal">OUTPUT</span>);
+  
+  <span class="hljs-built_in">digitalWrite</span>(MAX6675_CS, <span class="hljs-literal">LOW</span>);
+  <span class="hljs-built_in">delay</span>(<span class="hljs-number">1</span>);
+
+  <span class="hljs-comment">// Read in 16 bits,</span>
+  <span class="hljs-comment">//  15    = 0 always</span>
+  <span class="hljs-comment">//  14..2 = 0.25 degree counts MSB First</span>
+  <span class="hljs-comment">//  2     = 1 if thermocouple is open circuit  </span>
+  <span class="hljs-comment">//  1..0  = uninteresting status</span>
+  
+  v = <span class="hljs-built_in">shiftIn</span>(MAX6675_SO, MAX6675_SCK, MSBFIRST);
+  v &lt;&lt;= <span class="hljs-number">8</span>;
+  v |= <span class="hljs-built_in">shiftIn</span>(MAX6675_SO, MAX6675_SCK, MSBFIRST);
+  
+  <span class="hljs-built_in">digitalWrite</span>(MAX6675_CS, <span class="hljs-literal">HIGH</span>);
+  <span class="hljs-built_in">if</span> (v &amp; <span class="hljs-number">0x4</span>) 
+  {    
+    <span class="hljs-comment">// Bit 2 indicates if the thermocouple is disconnected</span>
+    <span class="hljs-built_in">return</span> NAN;     
+  }
+
+  <span class="hljs-comment">// The lower three bits (0,1,2) are discarded status bits</span>
+  v &gt;&gt;= <span class="hljs-number">3</span>;
+
+  <span class="hljs-comment">// The remaining bits are the number of 0.25 degree (C) counts</span>
+  <span class="hljs-built_in">return</span> v*<span class="hljs-number">0.25</span>;
+}
+</code></pre>
+</div>
+<div class="clearfix">
+</div>
+</div>
+</div>
+<br>
+<br>
+<div class="clearfix"></div>
+
+
+<br>
+<br>
+
+<img src="./02_files/pid_3.png" alt="Arduino temperature pid" width="100%" height="12%">
+<br>
+<br>
+
+<p>
+As you can see the temperature stays at that value. But that is after trying a lot of PID constants and that is the tricky part of this project. So, what you will have to do is try your own values till you get the correct ones. I advise you to start with the I and D values equal 0 and then increase those values slowly till you get good results.<br>
+
+Here on my oscilloscope I have the PWM signal of the MOSFET connected. 
+</p>
+<br>
+<br>
+
+<img src="./02_files/pid_4.png" alt="Arduino temperature pid" width="100%" height="12%">
+<br>
+<br>
+<p>
+At the beginning, till the system reaches the desired value the pulse has a small width since I use a BJT to activathe the N channel gate, so the mosfet is activated with a LOW value in this case. Once the set value is reached it starts to wambble around and by that maintaining the temperature. As you can see, if I try to cool down the heating element by blowing air with this tube, the PWM signal width get’s lower in order to keep the same value. So, the control works.
+</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<h2>Part 4 <orange>PID + rotary control</orange></h2>
+<br>
+
+<p>
+Now, all this system needs is some sort of control togheter with the LCD screen in order to view and also be able to set the desired temperature value as this commercial PID controller has the set and up and down buttons. For that I'll use the rotary encoder. It has a push button integrated so I can use it to enter the setpoint menu and increase or decrease the value.
+</p>
+<br>
+<br>
+
+<a href="https://electronoobs.com/eng_arduino_tut24_sch3.php" target="_blank"><img src="./02_files/full_schematic.png" alt="Arduino temperature pid" width="100%" height="12%"></a>
+<br>
+<br>
+
+<p>
+This above is the final schematic of this project. We have an LCD screen to print the values, the rotary encoder with push button insede for control, the thermocouple with the MAX 66 75 module, the MOSFET and the BJT as a driver circuit that will control the power and the heating element. Make sure that the thermocouple is touching the heating element in order to know the real value. I mount everything on the breadboard and now let’s test the new code, which by the way, you can also download from a below.
+</p>
+<br>
+<br>
+
+<div class="clearfix"></div>
+<div class="centrar_bloque">
+Download final code here: <a href="https://electronoobs.com/eng_arduino_tut24_code3.php" target="_blank"><img src="./02_files/eng_descarga(1).png" width="160" height="35"></a>
+</div>
+<div class="clearfix"></div>
+
+<br>
+<br>
+<p>
+The default value is now 0 degrees. Press the set button of the rotary encoderRotate it to the left in order to increase or decrease the temperature value. Press the set button once again and now you can set the P constant for the PID control. Press once again and select the I value. Finally, press the button again and select the D value. Now press the button and exit the menu and the new settings are stored. I set it to 100 degrees and now  the real read starts increasing till it reaches the desired value and it stays there. When we reach the desired value you can see the PWM wombelling in order to maintain that value.
+</p>
+<br>
+<br>
+<img src="./02_files/pid_5.png" alt="Arduino temperature pid" width="100%" height="12%">
+<br>
+<br>
+<p>
+There you go our PID of temperature works. I could 3D print a case for this project just as the commercial one has, but, since I’ll use this project for my soldering station in a future tutorial, I won’t do that now. In a future project, I’ll use this 12V soldering iron with a thermocouple inside and make my own soldering station so stay tuned for that guys.
+<br>
+<br>
+Have in mind that today’s project is for <strong>only DC power control</strong>, so only DC heating elements will work.  I’ll also make a tutorial on a temperature PID control, but for AC 220V voltage using a TRIAC control as in the past TRIAC tutorial. 
+<br>
+<br>
+<br>
+If my videos/tutorials help you and you would like to help my projects, I have a <a href="https://www.patreon.com/ELECTRONOOBS" target="_blank">Patreon campaign</a>. I would really appreciate that guys and it will help my workshop for other new projects and keep this channel/webpage going.  BTW, thanks to all my Patreons.<br>
+
+I hope that you’ve enjoyed this small tutorial on PID control. If you have any question about this video or any other, just leave it in the comment section below or on <a href="https://electronoobs.com/eng_preguntas.php" target="_blank">my Q&amp;A page</a>. Also, don’t forget to subscribe and watch all of my other great tutorials. Remember, if you consider helping my projects check my Patreon page as well.
+
+</p>
+
+
+
+
+
+
+<div class="clearfix"></div>
+<br>
+<br>
+<br>
+<br>
+<div class="capa_adsense">
+
+<!-- Anuncio ELECTRONOOBS.com 2 Color -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-7895687552151505" data-ad-slot="2265826671" data-ad-format="auto" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_1_host" style="border: none; height: 280px; width: 1200px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:1200px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="1200" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./02_files/ads.html" data-google-container-id="a!2" data-google-query-id="CJ-G8vuPwfwCFTWI6QUdor8Hfg" data-load-complete="true"></iframe></div></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div><div class="clearfix"></div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+<div class="centrar_bloque">
+<a href="https://electronoobs.com/eng_arduino_tut24.php"><img src="./02_files/back.png" width="180" height="40"></a>
+</div>
+<br>
+<br>
+<div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop" data-href="http://www.electronoobs.com/eng_arduino_tut24_2.php" data-width="100%" data-numposts="5" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=249946393271&amp;container_width=1467&amp;height=100&amp;href=http%3A%2F%2Fwww.electronoobs.com%2Feng_arduino_tut24_2.php&amp;locale=en_US&amp;numposts=5&amp;sdk=joey&amp;version=v8.0&amp;width=" style="width: 100%;"><span style="vertical-align: bottom; width: 100%; height: 836px;"><iframe name="fca036e39cf768" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./02_files/comments.html" style="border: none; visibility: visible; width: 100%; height: 836px;" class=""></iframe></span></div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    
+    
+    
+    
+    
+    
+ </div>
+ <div class="col-sm-2 sidenav" style="height: auto !important; min-height: 0px !important;">
+    
+      <div class="well" style="height: auto !important; min-height: 0px !important;">
+       <style>
+	.right_well{
+		float: left;		
+		width: 100%;
+		font-size: 14px;
+		background-color: #fff;
+		border-top: 5px solid #337ab7;
+		border-left: 1px solid #e4e4e4;
+		border-right: 1px solid #e4e4e4;
+		border-bottom: 1px solid #e4e4e4;
+		margin-bottom: 20px;
+		-webkit-box-shadow: 1px 0px 2px rgba(0,0,0,0.24);
+		-moz-box-shadow: 1px 0px 2px rgba(0,0,0,0.24);
+		-ms-box-shadow: 1px 0px 2px rgba(0,0,0,0.24);
+		-o-box-shadow: 1px 0px 2px rgba(0,0,0,0.24);
+		box-shadow: 1px 0px 2px rgba(0,0,0,0.24);	
+		color: #000;
+	 }
+	
+	@media screen and (min-width:767px){
+		.stickye_R {
+			float: left;
+			position: fixed;
+			top: 65px;				
+		}	
+	}
+	
+	.right_bar
+	{
+		/*float: left;*/
+		width: 100%;	
+		padding-bottom: 20px;
+		height: 100%;
+		border-top: 5px solid #337ab7;
+		padding-top: 5px;		
+	}
+	
+	#navebar_R
+	{
+		width: 100%;
+	}
+	
+	
+	.adsense_side_bloc_1_280 img{
+		border-radius: 20px;
+		box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+	}
+	
+	
+</style>
+ 
+	
+	
+<script>
+	
+window.onscroll = function() {myFunction4();
+							  myFunction3();
+							 
+							 
+							 
+							 };
+
+function myFunction4(){
+	var x_R = $('#right_bar').outerHeight() + 180;
+	var sidebar_width_R = $('#right_bar').outerWidth() ;
+	var sidebar_height_R = $( window ).outerHeight() * 0.9;
+
+	
+	if(window.pageYOffset >= x_R) {
+		navebar_R.classList.add('stickye_R');
+		navebar_R.style.width = (sidebar_width_R + "px");
+		navebar_R.style.height = sidebar_height_R;
+	}
+	else{
+		navebar_R.classList.remove('stickye_R');
+	}
+}
+</script>
+
+
+<div class="right_bar" id="right_bar" style="height: auto !important;">
+	<h2 style="color: #337ab7; text-transform: uppercase; font-weight: 900; ">ADVERTISERS</h2>
+	<div class="clearfix"></div>
+	
+	
+	
+	<div class="adsense_side_bloc_1_280">
+		<a href="https://www.pcbway.es/?from=electronoobs.com01" target="_blank"><img src="./02_files/19_01_2022.gif" width="95%" height="100%" alt="PCBWAY PCB service"></a>
+	</div>
+	
+	
+	<div class="clearfix"></div>
+	<br>
+	
+	
+		
+	
+		
+	
+	
+	<div class="adsense_side_bloc_2">
+		
+		<!-- Left Sidebar block 1 -->
+		<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-7895687552151505" data-ad-slot="3574796316" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_2_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 280px; width: 338px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:338px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="338" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./02_files/ads(1).html" data-google-container-id="a!3" data-google-query-id="CICR8_uPwfwCFU_OfAodMa4POw" data-load-complete="true"></iframe></div></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>	
+	</div>
+	<div class="clearfix"></div>
+	<br>
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="clearfix"></div>
+	<br>
+		
+	
+	<div class="adsense_side_bloc_2">
+		
+		<!-- Left Sidebar block 1 -->
+		<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-7895687552151505" data-ad-slot="3574796316" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_3_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 280px; width: 338px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0;width:338px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="338" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./02_files/ads(2).html" data-google-container-id="a!4" data-google-query-id="CLLB8_uPwfwCFQk_vQodpZENKQ" data-load-complete="true"></iframe></div></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>	
+	</div>
+	<div class="clearfix"></div>
+	<br>
+	
+		
+	<div class="adsense_side_bloc_1_280">
+		<a href="https://s.click.aliexpress.com/e/_9jqPR0?bz=300*250" target="_parent"><img width="300" height="250" src="./02_files/EN_300_250.png"></a>
+	</div>	
+	<div class="clearfix"></div>
+	<br>
+	
+	<div class="adsense_side_bloc_1_280">
+		
+					<a target="_blank" href="https://bit.ly/2ZNWgqy"><img id="tut_img" src="./02_files/FBad_4.jpg" alt="Curso Arduino Online nivel Intermedio" width="100%" height="100%"></a>	
+				
+	</div>
+	<div class="clearfix"></div>
+	<br>
+	
+	
+	<div class="adsense_side_bloc_1_280">
+		<a href="https://s.click.aliexpress.com/e/_AF7EeE?bz=500*500" target="_parent"><img width="300" height="250" src="./02_files/Hfbf96a9688454875b72a1572356ebf6cD.png"></a>
+	</div>	
+	<div class="clearfix"></div>
+	<br>
+	
+	
+	
+	
+	
+	<div class="adsense_side_bloc_2">
+		
+		<!-- Sidebar_cuadrado -->
+		<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-7895687552151505" data-ad-slot="2872239064" data-ad-format="auto" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_4_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 280px; width: 338px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0;width:338px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="338" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./02_files/ads(3).html" data-google-container-id="a!5" data-google-query-id="CLCC9PuPwfwCFYuE6QUdsgkBAA" data-load-complete="true"></iframe></div></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>	
+	</div>
+	<div class="clearfix"></div>
+	<br>
+	
+	
+	
+	
+	
+	
+	
+	
+
+</div> 		
+	
+<div id="navebar_R" class="stickye_R" style="float: left; width: 342.019px; position: absolute !important; transition: none 0s ease 0s !important; height: 655.8px !important; top: -185px !important; max-height: 655.8px !important;">
+	<div class="right_well" style="height: auto !important;">
+		<div class="adsense_side_bloc_2">
+		
+		<!-- Left Sidebar block 1 -->
+		<ins class="adsbygoogle" style="display: block; height: 250px;" data-ad-client="ca-pub-7895687552151505" data-ad-slot="3574796316" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_5_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 250px; width: 335px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;border:0;width:335px;height:250px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="335" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./02_files/ads(4).html" data-google-container-id="a!6" data-google-query-id="CNbb9fuPwfwCFV2B6QUdYYYLjg" data-load-complete="true"></iframe></div></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>	
+		</div>
+		<div class="clearfix"></div>
+		<br>
+
+		<div class="adsense_side_bloc_1_280">
+		
+			<a target="_blank" href="https://bit.ly/2ZNWgqy"><img id="tut_img" src="./02_files/FBad_4.jpg" alt="Curso Arduino Online nivel Intermedio" width="100%" height="100%"></a>	
+		
+	</div>
+	<div class="clearfix"></div>
+	<br>
+		
+		
+		
+	</div>
+</div>	
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+      <div class="well">
+       
+<iframe width="100%" height="100%" src="./02_files/Vep09UZsuiQ.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<br>
+<br>
+
+<iframe width="100%" height="100%" src="./02_files/kMU8xiGCpd0.html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>      </div>      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<footer class="container-fluid text-center">
+<para_footer>ELECTRONOOBS 2022
+<br>
+
+Keep up you guys!</para_footer>  
+  
+</footer>
+
+
+
+<iframe src="./02_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./02_files/zrt_lookup.html" style="display: none;"></iframe></html>
